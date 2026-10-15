@@ -38,7 +38,7 @@ CAMERAS = {
 }
 
 class EntryLiveRecorder(Node):
-    def __init__(self, outdir, fps=30.0, width=1280, height=720):
+    def __init__(self, outdir, fps=30.0, width=1920, height=1080):
         super().__init__('entry_live_recorder')
         self.bridge = CvBridge()
         self.fps = fps
@@ -129,7 +129,7 @@ def main():
     try:
         cl.wait_and_unpause(world, res_env, timeout=20.0)
         print("-> Spawning Entry cameras...", flush=True)
-        cam_topics = cl.spawn_shot_cameras(world, CAMERAS, res_env, 1280, 720, hfov=1.0)
+        cam_topics = cl.spawn_shot_cameras(world, CAMERAS, res_env, 1920, 1080, hfov=1.0)
         cam_bridge = cl.run_bg(
             ["ros2", "run", "ros_gz_bridge", "parameter_bridge"]
             + [f"{t}@sensor_msgs/msg/Image[gz.msgs.Image" for t in cam_topics.values()],

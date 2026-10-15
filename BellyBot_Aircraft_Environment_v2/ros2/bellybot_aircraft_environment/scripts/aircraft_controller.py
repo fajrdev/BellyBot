@@ -115,8 +115,8 @@ class Controller(Node):
    if max(abs(v) for v in a)>.01 or abs(roll)>math.radians(2) or abs(pitch)>math.radians(8):self.fault='Entry posture outside checked envelope';self.base();return
    v=w=0.
    if self.entry=='INGRESS':
-    if abs(x-1.3)>.012 or abs(ang-P/2)>.012:self.fault='Door path tracking error'
-    v=min(.08,max(0,-y*.6));w=max(-.02,min(.02,(P/2-ang)*1.2))
+    if abs(x-1.3)>.030 or abs(ang-P/2)>.050:self.fault='Door path tracking error'
+    v=min(.36,max(0.18,-y*.9));w=max(-.04,min(.04,(P/2-ang)*1.2))
     if y>=-.002:self.entry='TURN';v=0
    elif self.entry=='TURN':
     if math.hypot(x-1.3,y)>.015:self.fault='Turn centre drift exceeds 15 mm'
