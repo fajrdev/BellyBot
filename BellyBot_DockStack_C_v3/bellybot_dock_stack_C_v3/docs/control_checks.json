@@ -1,0 +1,23 @@
+{
+  "passed": 17,
+  "checks": [
+    "2 mm floor nose",
+    "extend before pitch",
+    "floor insertion preserves pitch",
+    "floor withdrawal preserves pitch",
+    "level before retraction",
+    "retract and raise before yaw",
+    "reject pitch over chassis",
+    "reject nose below floor",
+    "reject loaded roof exceeded",
+    "reject yaw limit exceeded",
+    "reject extension limit exceeded",
+    "reject NaN command",
+    "reject yaw with mast down",
+    "reject yaw with infeed extended",
+    "wheel rolling and differential turning",
+    "acceleration included in extension time",
+    "all ROS scripts parse"
+  ],
+  "ros_runtime_tested": false
+}

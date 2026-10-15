@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.8)
+project(bellybot_dock_stack_description)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY urdf meshes gazebo launch config rviz DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/joint_demo.py scripts/supervisor.py scripts/batch_cycle.py DESTINATION lib/${PROJECT_NAME})
+install(FILES scripts/control_core.py DESTINATION lib/${PROJECT_NAME})
+ament_package()

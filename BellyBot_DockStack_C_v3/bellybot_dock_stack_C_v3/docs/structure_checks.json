@@ -1,0 +1,201 @@
+{
+  "revision": "C-DockStack-v3.0",
+  "scope": "solid-level geometric connectivity and guide engagement, not strength validation",
+  "rigid_groups": {
+    "yaw_carrier": {
+      "solid_count": 42,
+      "component_count": 1,
+      "components": [
+        [
+          "RU178X_inner_race_envelope#0",
+          "inner_race_mount_screws#11",
+          "rotating_carrier_flange#0",
+          "carrier_cranked_rib_1_90#0",
+          "carrier_lower_crossbeam_275#0",
+          "rail_mount_pedestal_275_410#0",
+          "fixed_extension_rail_410#0",
+          "rail_mount_pedestal_-275_410#0",
+          "carrier_lower_crossbeam_-275#0",
+          "rail_mount_pedestal_-275_-410#0",
+          "fixed_rail_mount_screws_-410#1",
+          "fixed_rail_mount_screws_-410#0",
+          "fixed_extension_rail_-410#0",
+          "fixed_rail_mount_screws_-410#3",
+          "fixed_rail_mount_screws_-410#2",
+          "fixed_slide_end_stop_-1_415#0",
+          "fixed_slide_end_stop_-1_-315#0",
+          "fixed_dovetail_guide_-1#0",
+          "fixed_slide_end_stop_1_415#0",
+          "fixed_slide_end_stop_1_-315#0",
+          "fixed_dovetail_guide_1#0",
+          "fixed_rail_mount_screws_410#1",
+          "fixed_rail_mount_screws_410#0",
+          "fixed_rail_mount_screws_410#3",
+          "fixed_rail_mount_screws_410#2",
+          "rail_mount_pedestal_275_-410#0",
+          "carrier_cranked_rib_1_-90#0",
+          "carrier_cranked_rib_-1_90#0",
+          "carrier_cranked_rib_-1_-90#0",
+          "yaw_drive_output_shaft#0",
+          "inner_race_mount_screws#10",
+          "inner_race_mount_screws#9",
+          "inner_race_mount_screws#8",
+          "inner_race_mount_screws#7",
+          "inner_race_mount_screws#6",
+          "inner_race_mount_screws#5",
+          "inner_race_mount_screws#4",
+          "inner_race_mount_screws#3",
+          "inner_race_mount_screws#2",
+          "inner_race_mount_screws#1",
+          "inner_race_mount_screws#0",
+          "inner_race_adapter_shim#0"
+        ]
+      ]
+    },
+    "extension_mid": {
+      "solid_count": 13,
+      "component_count": 1,
+      "components": [
+        [
+          "middle_slide_-363#0",
+          "middle_slide_end_stop_-1_415#0",
+          "middle_slide_end_stop_-1_-315#0",
+          "middle_dovetail_guide_-1#0",
+          "mid_retained_gib_block_-1_-120#0",
+          "mid_retained_gib_block_-1_-280#0",
+          "middle_stage_cross_tie#0",
+          "middle_dovetail_guide_1#0",
+          "middle_slide_end_stop_1_415#0",
+          "middle_slide_end_stop_1_-315#0",
+          "middle_slide_363#0",
+          "mid_retained_gib_block_1_-120#0",
+          "mid_retained_gib_block_1_-280#0"
+        ]
+      ]
+    },
+    "tray_carriage": {
+      "solid_count": 13,
+      "component_count": 1,
+      "components": [
+        [
+          "outboard_pitch_runner_-325#0",
+          "tip_retained_gib_block_-1_-120#0",
+          "tip_retained_gib_block_-1_-280#0",
+          "pitch_rear_crossmember#0",
+          "pitch_bearing_pedestal_325#0",
+          "pitch_bearing_housing_325#0",
+          "outboard_pitch_runner_325#0",
+          "tip_retained_gib_block_1_-120#0",
+          "tip_retained_gib_block_1_-280#0",
+          "pitch_bearing_housing_-325#0",
+          "pitch_motor_mount_bridge#0",
+          "pitch_servo_envelope#0",
+          "pitch_bearing_pedestal_-325#0"
+        ]
+      ]
+    },
+    "tray": {
+      "solid_count": 18,
+      "component_count": 1,
+      "components": [
+        [
+          "thin_support_pan#0",
+          "replaceable_tapered_floor_nose#0",
+          "cassette_hinge_ear_290#0",
+          "pitch_idler_stub#0",
+          "cassette_hinge_ear_-290#0",
+          "pitch_drive_stub#0",
+          "end_plate_447#0",
+          "end_plate_-447#0",
+          "silver_side_rail_290#0",
+          "guide_support_290#0",
+          "soft_side_guide_290#0",
+          "rail_recess_290#0",
+          "hazard_tab_305#0",
+          "silver_side_rail_-290#0",
+          "guide_support_-290#0",
+          "soft_side_guide_-290#0",
+          "rail_recess_-290#0",
+          "hazard_tab_-305#0"
+        ]
+      ]
+    }
+  },
+  "guide_engagement": {
+    "0": {
+      "shoe_intervals_mm": [
+        [
+          -307,
+          -253
+        ],
+        [
+          -147,
+          -93
+        ]
+      ],
+      "min_end_margin_mm": 108
+    },
+    "125": {
+      "shoe_intervals_mm": [
+        [
+          -182,
+          -128
+        ],
+        [
+          -22,
+          32
+        ]
+      ],
+      "min_end_margin_mm": 233
+    },
+    "250": {
+      "shoe_intervals_mm": [
+        [
+          -57,
+          -3
+        ],
+        [
+          103,
+          157
+        ]
+      ],
+      "min_end_margin_mm": 258
+    },
+    "375": {
+      "shoe_intervals_mm": [
+        [
+          68,
+          122
+        ],
+        [
+          228,
+          282
+        ]
+      ],
+      "min_end_margin_mm": 133
+    },
+    "500": {
+      "shoe_intervals_mm": [
+        [
+          193,
+          247
+        ],
+        [
+          353,
+          407
+        ]
+      ],
+      "min_end_margin_mm": 8
+    }
+  },
+  "bearing_mount": {
+    "reference": "THK RU178X envelope",
+    "bore_mm": 115,
+    "outer_diameter_mm": 240,
+    "width_mm": 28,
+    "inner_bolt_circle_mm": 139,
+    "outer_bolt_circle_mm": 217,
+    "bolts_per_ring": 12,
+    "race_internals_simplified": true
+  }
+}

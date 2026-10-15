@@ -1,0 +1,533 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="corner_transfer">
+  <link name="fixture_world" />
+  <link name="corner_base">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_base.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.095" rpy="0 0 0" />
+      <mass value="32" />
+      <inertia ixx="2.5538666666666665" iyy="2.5538666666666665" izz="4.9152" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="spreader">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_spreader.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_0_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_0_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_0_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_0_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_1_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_1_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_1_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_1_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_2_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_2_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_2_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_2_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_3_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_3_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_3_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_base_guide_3_y1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="corner_base_anchor" type="fixed">
+    <parent link="fixture_world" />
+    <child link="corner_base" />
+    <origin xyz="1.3 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="corner_stage_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_stage_1.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.105" rpy="0 0 0" />
+      <mass value="6" />
+      <inertia ixx="0.17804199999999995" iyy="0.17804199999999995" izz="0.3271839999999999" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="guide_0_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_0_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_0_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_0_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_0_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_1_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_1_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_1_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_1_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_2_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_2_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_2_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_2_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_3_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_3_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_3_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_1_guide_3_y1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="corner_stage_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_stage_2.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.105" rpy="0 0 0" />
+      <mass value="6" />
+      <inertia ixx="0.166802" iyy="0.166802" izz="0.30470400000000003" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="guide_0_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_0_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_0_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_0_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_0_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_1_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_1_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_1_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_1_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_2_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_2_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_2_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_2_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_3_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_3_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_3_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_2_guide_3_y1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="corner_stage_3">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_stage_3.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.1245" rpy="0 0 0" />
+      <mass value="6" />
+      <inertia ixx="0.2018405" iyy="0.2018405" izz="0.36000000000000004" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="guide_0_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_0_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_0_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_0_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_0_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_1_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_1_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_1_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_1_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_2_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_2_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_2_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_2_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_3_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_3_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_3_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_guide_3_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="crossplate">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_stage_3_crossplate.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="corner_rotor">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_rotor.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.04875" rpy="0 0 0" />
+      <mass value="17" />
+      <inertia ixx="0.6947053541666667" iyy="1.4425693541666667" izz="2.0968139999999997" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="bearing_inner">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_bearing_inner.stl" />
+      </geometry>
+    </collision>
+    <collision name="rotor_support_plate">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_rotor_support_plate.stl" />
+      </geometry>
+    </collision>
+    <collision name="frame-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_frame-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guard-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_guard-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="frame1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_frame1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guard1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_guard1.stl" />
+      </geometry>
+    </collision>
+    <collision name="crossmember-0.38">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_crossmember-0.38.stl" />
+      </geometry>
+    </collision>
+    <collision name="crossmember0.38">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_rotor_crossmember0.38.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="corner_belt">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_belt.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.0724" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.030033333333333332" iyy="0.08336666666666666" izz="0.11333333333333333" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="contact">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/collision_corner_belt_contact.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="corner_belt_rear">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_belt_rear.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.018836166666666664" iyy="4.033333333333339e-05" izz="0.018836166666666664" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="corner_belt_front">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/corner_transfer/meshes/corner_belt_front.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.018836166666666664" iyy="4.033333333333339e-05" izz="0.018836166666666664" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="corner_stage_1_joint" type="prismatic">
+    <parent link="corner_base" />
+    <child link="corner_stage_1" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2500" velocity="0.18" lower="0" upper="0.11333333333333334" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="corner_stage_2_joint" type="prismatic">
+    <parent link="corner_stage_1" />
+    <child link="corner_stage_2" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2500" velocity="0.18" lower="0" upper="0.11333333333333334" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="corner_stage_3_joint" type="prismatic">
+    <parent link="corner_stage_2" />
+    <child link="corner_stage_3" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2500" velocity="0.18" lower="0" upper="0.11333333333333334" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="corner_rotor_joint" type="revolute">
+    <parent link="corner_stage_3" />
+    <child link="corner_rotor" />
+    <origin xyz="0 0 0.225" rpy="0 0 1.570796327" />
+    <axis xyz="0 0 -1" />
+    <limit effort="120" velocity="1.0" lower="0" upper="1.5707963267948966" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="corner_belt_joint" type="fixed">
+    <parent link="corner_rotor" />
+    <child link="corner_belt" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <joint name="corner_belt_rear_joint" type="continuous">
+    <parent link="corner_rotor" />
+    <child link="corner_belt_rear" />
+    <origin xyz="-0.488 0 0.061" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="120" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="corner_belt_front_joint" type="continuous">
+    <parent link="corner_rotor" />
+    <child link="corner_belt_front" />
+    <origin xyz="0.488 0 0.061" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="120" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+</robot>

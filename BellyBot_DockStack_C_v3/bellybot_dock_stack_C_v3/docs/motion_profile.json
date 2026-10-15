@@ -1,0 +1,68 @@
+{
+  "duration_s": 44,
+  "sample_hz": 60,
+  "sequence": [
+    {
+      "phase": "Home / five wheels per side",
+      "duration_s": 1
+    },
+    {
+      "phase": "Wheel rotation test",
+      "duration_s": 3
+    },
+    {
+      "phase": "Level tray / extend clear of chassis",
+      "duration_s": 4
+    },
+    {
+      "phase": "Pitch nose down to floor",
+      "duration_s": 3
+    },
+    {
+      "phase": "Advance nose along floor",
+      "duration_s": 2
+    },
+    {
+      "phase": "Reverse insertion motion",
+      "duration_s": 2
+    },
+    {
+      "phase": "Level before retracting",
+      "duration_s": 3
+    },
+    {
+      "phase": "Retract floor-access cassette",
+      "duration_s": 4
+    },
+    {
+      "phase": "Match tray and infeed to next layer",
+      "duration_s": 3
+    },
+    {
+      "phase": "Extend at fixed layer height",
+      "duration_s": 3
+    },
+    {
+      "phase": "Retract / belt compensation direction",
+      "duration_s": 3
+    },
+    {
+      "phase": "Retract infeed clear of yaw sweep",
+      "duration_s": 4
+    },
+    {
+      "phase": "Illustration yaw pose",
+      "duration_s": 4
+    },
+    {
+      "phase": "Illustration extension",
+      "duration_s": 3
+    },
+    {
+      "phase": "Hold / kinematics only",
+      "duration_s": 2
+    }
+  ],
+  "kinematic_only": true,
+  "joint_limits_checked": true
+}

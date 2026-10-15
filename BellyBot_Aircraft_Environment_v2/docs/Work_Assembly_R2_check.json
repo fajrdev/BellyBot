@@ -1,0 +1,11 @@
+{
+  "valid": true,
+  "solids": 691,
+  "units": "mm",
+  "robot_pose_mm": [
+    4100,
+    0,
+    3
+  ],
+  "configuration": "Door belt docked at sill Y=-0.61m, robot stowed; no interior conveyors"
+}

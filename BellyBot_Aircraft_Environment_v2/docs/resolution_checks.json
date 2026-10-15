@@ -1,0 +1,78 @@
+{
+  "method": "Triangle mesh BVH/FCL distance to finite doorway and liner collision solids; actual v3 visual geometry. Entry translation step <=2mm and turn step <=0.00201rad. Sampled ramp support envelope; not tracked contact stability or a physics run. Transfer sweep is sampled; robot/buffer uses conservative per-part AABB distance bounds across three lift heights; no free-bag dynamics.",
+  "runtime_tested": false,
+  "entry_samples": 2432,
+  "entry_ingress_min_gap_m": 0.059999966621398615,
+  "entry_turn_min_gap_m": 0.03276951545760185,
+  "entry_continuous_wall_gap_lower_bound_m": 0.03076951545760185,
+  "entry_deck_height_m": 0.18,
+  "entry_door_top_clearance_m": 0.17200000000000004,
+  "exit_ramp_samples": 901,
+  "exit_ramp_min_wall_gap_m": 0.060074967470769125,
+  "transfer_samples": 253,
+  "min_corner_door_gap_m": 0.009999978542327814,
+  "min_corner_buffer_gap_m": 0.007965414217850242,
+  "robot_buffer_samples": 477,
+  "min_robot_buffer_gap_m": 0.046015183448790964,
+  "robot_buffer_distance_method": "Conservative per-part AABB lower bound, not exact mesh distance",
+  "controller_contracts": {
+    "tall_receive": {
+      "expected": true,
+      "accepted": true,
+      "result": {
+        "roof_m": 0.10985000000000023,
+        "wall_m": 0.028504596380012626,
+        "lift_cap_m": 0.13,
+        "pressure_screen_kg_m2": 342.9759746360455
+      }
+    },
+    "small_receive": {
+      "expected": true,
+      "accepted": true,
+      "result": {
+        "roof_m": 0.10985,
+        "wall_m": 0.028504596380012626,
+        "lift_cap_m": 0.23,
+        "pressure_screen_kg_m2": 342.9759746360455
+      }
+    },
+    "roof_reject": {
+      "expected": false,
+      "accepted": false,
+      "result": "Aircraft joint operating limit exceeded"
+    },
+    "yaw_reach_reject": {
+      "expected": false,
+      "accepted": false,
+      "result": "Yaw requires >=80 mm lift and <=500 mm reach"
+    },
+    "yaw_low_reject": {
+      "expected": false,
+      "accepted": false,
+      "result": "Yaw requires >=80 mm lift and <=500 mm reach"
+    },
+    "safe_yaw": {
+      "expected": true,
+      "accepted": true,
+      "result": {
+        "roof_m": 0.10985000000000023,
+        "wall_m": 0.028504596380012626,
+        "lift_cap_m": 0.13,
+        "pressure_screen_kg_m2": 466.2517140590504
+      }
+    }
+  },
+  "lift_caps": {
+    "0.28": 0.23,
+    "0.32": 0.19,
+    "0.38": 0.13
+  },
+  "required_host_checks": [
+    "Gazebo schema and runtime",
+    "Track friction and ramp settling",
+    "Payload centering, slip, impact, transfer gaps",
+    "Throughput >=12 bags/min",
+    "Measured load patch forces <=600 kg/m2",
+    "All custom fixture structural/load ratings"
+  ]
+}

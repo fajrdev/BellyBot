@@ -1,0 +1,2 @@
+# Supplied references
+Both marked and unmarked JPEGs are included as reference_1.jpeg and reference_2.jpeg; visually identify which is marked rather than assuming file order. These are projection references, not confirmed object IDs. The original handoffs and limits are copied for traceability and may contain historical or superseded statements; the new plan does not certify them. Source archives themselves are not duplicated. Static inspection findings and proposed work are separated in the technical briefs.

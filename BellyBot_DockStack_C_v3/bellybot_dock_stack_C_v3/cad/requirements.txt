@@ -1,0 +1,9 @@
+cadquery==2.7.0
+numpy
+scipy
+trimesh
+yourdfpy
+Pillow
+numba
+PyYAML
+reportlab>=4.0

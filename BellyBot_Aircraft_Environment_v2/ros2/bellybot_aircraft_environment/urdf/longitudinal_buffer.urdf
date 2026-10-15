@@ -1,0 +1,608 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="longitudinal_buffer">
+  <link name="fixture_world" />
+  <link name="buffer_base">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/buffer_base.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0.13" rpy="0 0 0" />
+      <mass value="28" />
+      <inertia ixx="1.8834666666666664" iyy="3.6306666666666665" izz="5.198666666666666" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="spreader">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_spreader.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_0_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_0_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_0_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_0_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_1_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_1_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_1_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_1_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_2_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_2_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_2_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_2_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_3_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_3_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_3_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_guide_3_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_foot_0">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_post_foot_0.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_foot_1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_post_foot_1.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_foot_2">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_post_foot_2.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_foot_3">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_base_post_foot_3.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="buffer_base_anchor" type="fixed">
+    <parent link="fixture_world" />
+    <child link="buffer_base" />
+    <origin xyz="2.7 0 0" rpy="0 0 0" />
+  </joint>
+  <link name="buffer_stage_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/buffer_stage_1.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.03 0 0.14" rpy="0 0 0" />
+      <mass value="6" />
+      <inertia ixx="0.16089799999999999" iyy="0.3765780000000001" izz="0.47987600000000014" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="guide_0_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_0_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_0_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_0_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_0_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_1_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_1_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_1_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_1_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_2_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_2_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_2_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_2_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_3_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_3_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_3_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_1_guide_3_y1.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="buffer_stage_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/buffer_stage_2.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0.1395 0 0.2115" rpy="0 0 0" />
+      <mass value="6" />
+      <inertia ixx="0.31624900000000006" iyy="1.4066889999999999" izz="1.576249" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="guide_0_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_0_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_0_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_0_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_0_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_0_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_1_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_1_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_1_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_1_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_1_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_2_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_2_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_2_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_2_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_2_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_3_x-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_3_y-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_x1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_3_x1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide_3_y1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide_3_y1.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_head_0">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_post_head_0.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_head_1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_post_head_1.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_head_2">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_post_head_2.stl" />
+      </geometry>
+    </collision>
+    <collision name="post_head_3">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_post_head_3.stl" />
+      </geometry>
+    </collision>
+    <collision name="rail-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_rail-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide-1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide-1.stl" />
+      </geometry>
+    </collision>
+    <collision name="rail1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_rail1.stl" />
+      </geometry>
+    </collision>
+    <collision name="guide1">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_guide1.stl" />
+      </geometry>
+    </collision>
+    <collision name="crossbar-0.42">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_crossbar-0.42.stl" />
+      </geometry>
+    </collision>
+    <collision name="crossbar0.36">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_crossbar0.36.stl" />
+      </geometry>
+    </collision>
+    <collision name="tail_deadplate">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_stage_2_tail_deadplate.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="buffer_belt">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/buffer_belt.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0.144 0 0.3674" rpy="0 0 0" />
+      <mass value="1" />
+      <inertia ixx="0.030033333333333332" iyy="0.2133666666666667" izz="0.24333333333333337" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="contact">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_belt_contact.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="buffer_belt_rear">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/buffer_belt_rear.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.018836166666666664" iyy="4.033333333333339e-05" izz="0.018836166666666664" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="buffer_belt_front">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/buffer_belt_front.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.5" />
+      <inertia ixx="0.018836166666666664" iyy="4.033333333333339e-05" izz="0.018836166666666664" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="buffer_bridge">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/buffer_bridge.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="-0.109 0 0" rpy="0 0 0" />
+      <mass value="2.8" />
+      <inertia ixx="0.10483666666666669" iyy="0.013310266666666667" izz="0.11796026666666669" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <collision name="plate">
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/collision_buffer_bridge_plate.stl" />
+      </geometry>
+    </collision>
+  </link>
+  <link name="bridge_roller_0">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/bridge_roller_0.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0018019999999999998" iyy="4e-06" izz="0.0018019999999999998" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="bridge_roller_1">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/bridge_roller_1.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0018019999999999998" iyy="4e-06" izz="0.0018019999999999998" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="bridge_roller_2">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/bridge_roller_2.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0018019999999999998" iyy="4e-06" izz="0.0018019999999999998" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="bridge_roller_3">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/bridge_roller_3.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0018019999999999998" iyy="4e-06" izz="0.0018019999999999998" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="bridge_roller_4">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/bridge_roller_4.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0018019999999999998" iyy="4e-06" izz="0.0018019999999999998" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="bridge_roller_5">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/bridge_roller_5.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0018019999999999998" iyy="4e-06" izz="0.0018019999999999998" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <link name="bridge_roller_6">
+    <visual>
+      <geometry>
+        <mesh filename="package://bellybot_aircraft_environment/models/longitudinal_buffer/meshes/bridge_roller_6.dae" />
+      </geometry>
+    </visual>
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.06" />
+      <inertia ixx="0.0018019999999999998" iyy="4e-06" izz="0.0018019999999999998" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+  </link>
+  <joint name="buffer_stage_1_joint" type="prismatic">
+    <parent link="buffer_base" />
+    <child link="buffer_stage_1" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2500" velocity="0.18" lower="0" upper="0.129" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="buffer_stage_2_joint" type="prismatic">
+    <parent link="buffer_stage_1" />
+    <child link="buffer_stage_2" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit effort="2500" velocity="0.18" lower="0" upper="0.129" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="buffer_belt_joint" type="fixed">
+    <parent link="buffer_stage_2" />
+    <child link="buffer_belt" />
+    <origin xyz="0 0 0" rpy="0 0 0" />
+  </joint>
+  <joint name="buffer_belt_rear_joint" type="continuous">
+    <parent link="buffer_stage_2" />
+    <child link="buffer_belt_rear" />
+    <origin xyz="-0.644 0 0.356" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="120" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="buffer_belt_front_joint" type="continuous">
+    <parent link="buffer_stage_2" />
+    <child link="buffer_belt_front" />
+    <origin xyz="0.932 0 0.356" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="120" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="buffer_bridge_joint" type="revolute">
+    <parent link="buffer_stage_2" />
+    <child link="buffer_bridge" />
+    <origin xyz="-0.664 0 0.366" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="0.5" lower="-1.5707963267948966" upper="0" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="bridge_roller_0_joint" type="continuous">
+    <parent link="buffer_bridge" />
+    <child link="bridge_roller_0" />
+    <origin xyz="-0.014 0 -0.001" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="250" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="bridge_roller_1_joint" type="continuous">
+    <parent link="buffer_bridge" />
+    <child link="bridge_roller_1" />
+    <origin xyz="-0.046 0 -0.001" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="250" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="bridge_roller_2_joint" type="continuous">
+    <parent link="buffer_bridge" />
+    <child link="bridge_roller_2" />
+    <origin xyz="-0.078 0 -0.001" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="250" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="bridge_roller_3_joint" type="continuous">
+    <parent link="buffer_bridge" />
+    <child link="bridge_roller_3" />
+    <origin xyz="-0.11 0 -0.001" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="250" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="bridge_roller_4_joint" type="continuous">
+    <parent link="buffer_bridge" />
+    <child link="bridge_roller_4" />
+    <origin xyz="-0.142 0 -0.001" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="250" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="bridge_roller_5_joint" type="continuous">
+    <parent link="buffer_bridge" />
+    <child link="bridge_roller_5" />
+    <origin xyz="-0.174 0 -0.001" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="250" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+  <joint name="bridge_roller_6_joint" type="continuous">
+    <parent link="buffer_bridge" />
+    <child link="bridge_roller_6" />
+    <origin xyz="-0.206 0 -0.001" rpy="0 0 0" />
+    <axis xyz="0 1 0" />
+    <limit effort="120" velocity="250" />
+    <dynamics damping=".3" friction="0" />
+  </joint>
+</robot>

@@ -1,0 +1,351 @@
+{
+  "revision": "C-DockStack-v3.0",
+  "cad_valid": true,
+  "part_groups": 202,
+  "solid_count": 511,
+  "gazebo_runtime_tested": false,
+  "rviz_runtime_tested": false,
+  "step_reimport": {
+    "valid": true,
+    "solids": 495
+  },
+  "urdf": {
+    "bellybot.urdf": {
+      "links": 23,
+      "joints": 22,
+      "continuous_joints": 12,
+      "independent_fk_poses": 40,
+      "max_matrix_error": 4.440892098500626e-16
+    },
+    "bellybot_portable.urdf": {
+      "links": 23,
+      "joints": 22,
+      "continuous_joints": 12,
+      "independent_fk_poses": 40,
+      "max_matrix_error": 4.440892098500626e-16
+    },
+    "display.urdf": {
+      "links": 29,
+      "joints": 28,
+      "continuous_joints": 14,
+      "independent_fk_poses": 40,
+      "max_matrix_error": 5.551115123125783e-16
+    },
+    "display_portable.urdf": {
+      "links": 29,
+      "joints": 28,
+      "continuous_joints": 14,
+      "independent_fk_poses": 40,
+      "max_matrix_error": 4.440892098500626e-16
+    },
+    "infeed.urdf": {
+      "links": 6,
+      "joints": 5,
+      "continuous_joints": 2,
+      "independent_fk_poses": 40,
+      "max_matrix_error": 3.3306690738754696e-16
+    }
+  },
+  "solid_intersections": {
+    "home": [],
+    "floor_approach": [],
+    "floor_insert": [],
+    "batch_receive": [],
+    "batch_reach": [],
+    "placement": [],
+    "unloaded_full_stroke": [],
+    "full_reach": [],
+    "yaw_-95": [],
+    "yaw_-45": [],
+    "yaw_45": [],
+    "yaw_95": [],
+    "independent_lift_1": [],
+    "independent_lift_2": [],
+    "independent_lift_3": [],
+    "independent_extension_mid_joint": [],
+    "independent_extension_tip_joint": [],
+    "slide_mid": [],
+    "floor_pitch_half": [],
+    "infeed_lift_max": [],
+    "low_yaw_-95": [],
+    "low_yaw_-65": [],
+    "low_yaw_-30": [],
+    "low_yaw_30": [],
+    "low_yaw_65": [],
+    "low_yaw_95": [],
+    "independent_slide_0_0.25": [],
+    "independent_slide_0.25_0": [],
+    "independent_slide_0.125_0.375": [],
+    "independent_slide_0.375_0.125": []
+  },
+  "envelopes_mm": {
+    "home": [
+      [
+        -743.9847789044095,
+        -550.0,
+        0.0
+      ],
+      [
+        743.9847789044095,
+        550.0,
+        535.0
+      ]
+    ],
+    "floor_approach": [
+      [
+        -743.9847789044095,
+        -550.0,
+        0.0
+      ],
+      [
+        1280.0,
+        550.0,
+        527.5
+      ]
+    ],
+    "floor_insert": [
+      [
+        -743.9847789044095,
+        -550.0,
+        0.0
+      ],
+      [
+        1440.0,
+        550.0,
+        710.8461198003339
+      ]
+    ],
+    "batch_receive": [
+      [
+        -743.9847789044095,
+        -550.0,
+        0.0
+      ],
+      [
+        743.9847789044095,
+        550.0,
+        635.0
+      ]
+    ],
+    "batch_reach": [
+      [
+        -743.9847789044095,
+        -550.0,
+        0.0
+      ],
+      [
+        1290.0,
+        550.0,
+        876.35
+      ]
+    ],
+    "placement": [
+      [
+        -743.9847789044095,
+        -572.5887938155179,
+        0.0
+      ],
+      [
+        743.9847789044095,
+        1013.4647311449759,
+        876.35
+      ]
+    ],
+    "unloaded_full_stroke": [
+      [
+        -743.9847789044095,
+        -595.1879125026597,
+        0.0
+      ],
+      [
+        743.9847789044095,
+        595.1879125026596,
+        1135.0
+      ]
+    ],
+    "full_reach": [
+      [
+        -743.9847789044095,
+        -550.0,
+        0.0
+      ],
+      [
+        743.9847789044095,
+        1109.8200501756087,
+        735.0
+      ]
+    ]
+  },
+  "floor_access": {
+    "floor_approach": {
+      "tip_mm": [
+        1182.0233157100893,
+        0.0,
+        2.000000000000057
+      ],
+      "pitch_deg": 30.922029762472043
+    },
+    "floor_insert": {
+      "tip_mm": [
+        1342.0233157100893,
+        0.0,
+        2.000000000000057
+      ],
+      "pitch_deg": 30.922029762472043
+    }
+  },
+  "demo_envelope_sampling": {
+    "samples": 2641,
+    "min_nose_mm": 2.000000000000057,
+    "max_robot_height_mm": 635.0030839550373,
+    "max_joint_speeds": {
+      "left_wheel_0_joint": 2.5,
+      "left_wheel_1_joint": 2.5,
+      "left_wheel_2_joint": 2.5,
+      "left_wheel_3_joint": 2.5,
+      "left_wheel_4_joint": 2.5,
+      "right_wheel_0_joint": 2.5,
+      "right_wheel_1_joint": 2.5,
+      "right_wheel_2_joint": 2.5,
+      "right_wheel_3_joint": 2.5,
+      "right_wheel_4_joint": 2.5,
+      "lift_stage_1_joint": 0.020833333333333332,
+      "lift_stage_2_joint": 0.020833333333333332,
+      "lift_stage_3_joint": 0.020833333333333332,
+      "yaw_joint": 0.5317800064670223,
+      "extension_mid_joint": 0.25,
+      "extension_tip_joint": 0.25,
+      "tray_pitch_joint": 0.3373070192217608,
+      "tray_rear_roller_joint": 50.0,
+      "tray_front_roller_joint": 50.0,
+      "infeed_lift_joint": 0.0625,
+      "infeed_extension_joint": 0.1171875,
+      "infeed_rear_roller_joint": 50.0,
+      "infeed_front_roller_joint": 50.0
+    },
+    "scope": "unloaded joint/height/floor envelopes; not a continuous solid-collision proof"
+  },
+  "floor_pressure_screen": {
+    "cases": [
+      {
+        "pose": "home",
+        "loaded_mass_kg": 205.0,
+        "com_m": [
+          -0.005416926355363153,
+          -0.005319768408217325,
+          0.2867038536760568
+        ],
+        "four_patch_reaction_kg_equivalent": [
+          52.81830009370594,
+          51.36423006212655,
+          51.135769937873455,
+          49.68169990629405
+        ],
+        "factored_max_patch_kg_m2": 342.9759746344542,
+        "minimum_reaction_kg_equivalent": 49.68169990629405,
+        "longitudinal_CoM_margin_m": 0.6545830736446369,
+        "lateral_CoM_margin_m": 0.5446802315917827,
+        "within_screen_limit": true
+      },
+      {
+        "pose": "placement",
+        "loaded_mass_kg": 205.0,
+        "com_m": [
+          0.059796452814930894,
+          0.10964797005293572,
+          0.331256699204512
+        ],
+        "four_patch_reaction_kg_equivalent": [
+          26.97820710256785,
+          56.94865225037029,
+          45.55134774962971,
+          75.52179289743215
+        ],
+        "factored_max_patch_kg_m2": 490.4012525807283,
+        "minimum_reaction_kg_equivalent": 26.97820710256785,
+        "longitudinal_CoM_margin_m": 0.6002035471850692,
+        "lateral_CoM_margin_m": 0.44035202994706435,
+        "within_screen_limit": true
+      },
+      {
+        "pose": "floor_insert",
+        "loaded_mass_kg": 205.0,
+        "com_m": [
+          0.254646094975362,
+          -0.005319768408217325,
+          0.23557300976411727
+        ],
+        "four_patch_reaction_kg_equivalent": [
+          12.429724811282727,
+          10.975654779703325,
+          91.52434522029667,
+          90.07027518871728
+        ],
+        "factored_max_patch_kg_m2": 594.3139300019263,
+        "minimum_reaction_kg_equivalent": 10.975654779703325,
+        "longitudinal_CoM_margin_m": 0.40535390502463803,
+        "lateral_CoM_margin_m": 0.5446802315917827,
+        "within_screen_limit": true
+      },
+      {
+        "pose": "batch_reach",
+        "loaded_mass_kg": 205.0,
+        "com_m": [
+          0.2053147809617101,
+          -0.005319768408217325,
+          0.331256699204512
+        ],
+        "four_patch_reaction_kg_equivalent": [
+          20.091027366433206,
+          18.636957334853808,
+          83.8630426651462,
+          82.40897263356679
+        ],
+        "factored_max_patch_kg_m2": 544.565212111339,
+        "minimum_reaction_kg_equivalent": 18.636957334853808,
+        "longitudinal_CoM_margin_m": 0.45468521903828996,
+        "lateral_CoM_margin_m": 0.5446802315917827,
+        "within_screen_limit": true
+      },
+      {
+        "pose": "full_reach",
+        "loaded_mass_kg": 205.0,
+        "com_m": [
+          -0.004969428427556652,
+          0.14968836303589916,
+          0.37580954473296735
+        ],
+        "four_patch_reaction_kg_equivalent": [
+          31.56435767876735,
+          72.47917690857979,
+          30.02082309142021,
+          70.93564232123265
+        ],
+        "factored_max_patch_kg_m2": 470.6440058998687,
+        "minimum_reaction_kg_equivalent": 30.02082309142021,
+        "longitudinal_CoM_margin_m": 0.6550305715724434,
+        "lateral_CoM_margin_m": 0.4003116369641009,
+        "within_screen_limit": true
+      }
+    ],
+    "limit_kg_m2": 600,
+    "all_named_cases_within_screen_limit": true,
+    "assumptions": "four equal-compliance half-track patches, uniform pressure per patch, assigned masses, centered rigid bag. Negative calculated reaction invalidates the assumed four-contact load sharing. Not aircraft floor compliance.",
+    "compliance_proven": false
+  },
+  "mechanism": {
+    "lift_stage_overlap_mm": 55,
+    "extension_fixed_mid_overlap_mm": 350.0,
+    "extension_mid_carriage_overlap_mm": 355.0,
+    "cassette_pitch_deg": [
+      0,
+      32
+    ],
+    "extension_total_mm": 1000,
+    "infeed_height_travel_mm": 250
+  },
+  "gazebo_xml": {
+    "references_valid": true,
+    "sdformat_schema_tested": false
+  }
+}

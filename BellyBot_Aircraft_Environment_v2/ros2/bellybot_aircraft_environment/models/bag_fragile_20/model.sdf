@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="bag_fragile_20">
+    <static>false</static>
+    <link name="body">
+      <inertial>
+        <mass>20</mass>
+        <inertia>
+          <ixx>0.5633333333333334</ixx>
+          <iyy>0.9233333333333335</iyy>
+          <izz>1.0053333333333334</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="detailed_visual">
+        <geometry>
+          <mesh>
+            <uri>model://bag_fragile_20/meshes/visual.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="body_collision">
+        <geometry>
+          <box>
+            <size>0.64 0.44 0.38</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.3</mu>
+              <mu2>0.3</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

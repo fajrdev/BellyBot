@@ -1,0 +1,13 @@
+{
+  "window_start_sim_s": 0,
+  "window_duration_sim_s": 28.42,
+  "unique_accepted_placements": 6,
+  "bags_per_min": 12.667135819845178,
+  "throughput_target_met": true,
+  "dropped_bags": [],
+  "manual_interventions": 0,
+  "invalid_bag_ids": [],
+  "peak_patch_kg_m2": 594.3224291848144,
+  "floor_limit_met": true,
+  "overall_hackathon_compliance": "NOT DETERMINED: geometry, fragility, autonomy and physical floor support need separate evidence"
+}

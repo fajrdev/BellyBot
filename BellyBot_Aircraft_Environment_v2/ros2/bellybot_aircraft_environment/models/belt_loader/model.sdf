@@ -1,0 +1,270 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="belt_loader">
+    <static>false</static>
+    <link name="body">
+      <visual name="detailed_visual">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/visual.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="leg_1.04_-5.6000000000000005">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_leg_1.04_-5.6000000000000005.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="wheel_1.04_-5.6000000000000005">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_wheel_1.04_-5.6000000000000005.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="leg_1.56_-5.6000000000000005">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_leg_1.56_-5.6000000000000005.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="wheel_1.56_-5.6000000000000005">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_wheel_1.56_-5.6000000000000005.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="leg_1.04_-3.4000000000000004">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_leg_1.04_-3.4000000000000004.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="wheel_1.04_-3.4000000000000004">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_wheel_1.04_-3.4000000000000004.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="leg_1.56_-3.4000000000000004">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_leg_1.56_-3.4000000000000004.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="wheel_1.56_-3.4000000000000004">
+        <geometry>
+          <mesh>
+            <uri>model://belt_loader/meshes/collision_wheel_1.56_-3.4000000000000004.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <inertial>
+        <mass>130</mass>
+        <inertia>
+          <ixx>10.210416666666669</ixx>
+          <iyy>178.01874999999998</iyy>
+          <izz>181.67500000000004</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <pose>1.3 -4.5 -0.35 0 -0.3296244074 1.570796327</pose>
+      </inertial>
+      <collision name="guard-1">
+        <pose>1.6425 -4.5 -0.35 0 -0.3296244074 1.570796327</pose>
+        <geometry>
+          <box>
+            <size>4.016217126 0.035 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.45</mu>
+              <mu2>0.45</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="guard1">
+        <pose>0.9575 -4.5 -0.35 0 -0.3296244074 1.570796327</pose>
+        <geometry>
+          <box>
+            <size>4.016217126 0.035 0.1</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.45</mu>
+              <mu2>0.45</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+    </link>
+    <link name="belt_contact">
+      <pose>1.3 -4.494335466 -0.3665578697 0 -0.3296244074 1.570796327</pose>
+      <inertial>
+        <mass>10</mass>
+        <inertia>
+          <ixx>0.3531041666666667</ixx>
+          <iyy>13.442687500000003</iyy>
+          <izz>13.793750000000003</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <collision name="belt_surface">
+        <geometry>
+          <box>
+            <size>4.016217126 0.65 0.035</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.65</mu>
+              <mu2>0.65</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+    </link>
+    <joint name="belt_frame_fixed" type="fixed">
+      <parent>body</parent>
+      <child>belt_contact</child>
+    </joint>
+    <joint name="anchored_to_apron" type="fixed">
+      <parent>world</parent>
+      <child>body</child>
+    </joint>
+    <plugin filename="gz-sim-track-controller-system" name="gz::sim::systems::TrackController">
+      <link>belt_contact</link>
+      <velocity_topic>/environment/loader/speed</velocity_topic>
+      <track_orientation>0 3.141592653589793 0</track_orientation>
+      <max_command_age>0.5</max_command_age>
+      <min_velocity>-0.5</min_velocity>
+      <max_velocity>0.5</max_velocity>
+      <min_acceleration>-0.3</min_acceleration>
+      <max_acceleration>0.3</max_acceleration>
+    </plugin>
+  </model>
+</sdf>

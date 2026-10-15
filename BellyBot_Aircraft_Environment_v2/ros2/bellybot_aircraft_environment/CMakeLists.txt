@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.16)
+project(bellybot_aircraft_environment)
+find_package(ament_cmake REQUIRED)
+install(DIRECTORY models worlds launch urdf config rviz DESTINATION share/${PROJECT_NAME})
+install(PROGRAMS scripts/loader_command.py DESTINATION lib/${PROJECT_NAME})
+install(PROGRAMS scripts/aircraft_controller.py DESTINATION lib/${PROJECT_NAME})
+install(FILES scripts/aircraft_guard.py scripts/transfer_core.py DESTINATION lib/${PROJECT_NAME})
+ament_package()

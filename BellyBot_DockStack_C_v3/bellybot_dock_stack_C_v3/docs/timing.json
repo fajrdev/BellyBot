@@ -1,0 +1,62 @@
+{
+  "scope": "analytical kinematic estimate, no physics contact/actuator test",
+  "v1_speed_only_lower_bound_s": 7.4586570198653845,
+  "layer_batch": {
+    "phases": [
+      {
+        "phase": "Receive from staged infeed",
+        "time_s": 1.3160740129524926
+      },
+      {
+        "phase": "Extend at layer height",
+        "time_s": 1.3592353958776981
+      },
+      {
+        "phase": "Retract and advance belt",
+        "time_s": 1.78125
+      },
+      {
+        "phase": "Verify and inter-command allowance",
+        "time_s": 0.2
+      }
+    ],
+    "nominal_cycle_s": 4.656559408830191,
+    "ideal_bags_min": 12.885049825891311,
+    "minimum_productive_fraction_for_12": 0.9313118817660382,
+    "nonproductive_allowance_s_per_bag": 0.3434405911698093,
+    "at_90_percent_bags_min": 11.596544843302182,
+    "assumptions": [
+      "layer and infeed pre-set to same height",
+      "yaw zero during batch",
+      "one bag staged at receiving point",
+      "0.80 m extension and simultaneous 1.425 m belt travel during retraction",
+      "receiver front x=0.780 m; top z=0.555 m below tray surface z=0.595 m",
+      "belt tracking and friction sufficient to produce intended bag motion",
+      "0.20 s verification/command allowance, not measured",
+      "all setup, repositioning, faults and retries consume the remaining time budget"
+    ],
+    "contact_separation_assumption": {
+      "quintic_blend_at_separation": 0.6105263157894737,
+      "bag_center_x_m": 1.181578947368421,
+      "bag_rear_x_m": 0.8015789473684211,
+      "stack_front_x_m": 0.78,
+      "full_support_margin_m": 0.02157894736842103,
+      "surface_drop_m": 0.04,
+      "note": "ignores slip, stack friction, 40 mm settling and compliant deformation; validate in Gazebo and hardware"
+    }
+  },
+  "generic_65_degree_route_estimate_s_before_separate_deposit_allowance": 16.806523860159295,
+  "floor_round_trip_mechanism_only_s_before_bag_transfer": 6.732696727024442,
+  "load_sizing_estimates": {
+    "assumed_payload_kg": 32,
+    "belt_acceleration_m_s2": 3.0,
+    "payload_horizontal_belt_force_N": 96,
+    "min_flat_belt_friction_coefficient_no_slip": 0.30591486389337846,
+    "floor_ramp_deg": 30.92202976247204,
+    "min_ramp_mu_constant_speed": 0.5990099858817917,
+    "ramp_gravity_component_N": 161.25933911311827,
+    "pitch_static_payload_moment_Nm": 134.939504,
+    "notes": "excludes tray weight, insertion loads, efficiency, structure and fragility. No motor selected."
+  },
+  "full_hackathon_throughput_verified": false
+}

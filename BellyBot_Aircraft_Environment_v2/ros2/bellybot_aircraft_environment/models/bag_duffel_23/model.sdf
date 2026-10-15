@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="bag_duffel_23">
+    <static>false</static>
+    <link name="body">
+      <inertial>
+        <mass>23</mass>
+        <inertia>
+          <ixx>0.5029333333333333</ixx>
+          <iyy>1.135433333333333</iyy>
+          <izz>1.2458333333333331</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="detailed_visual">
+        <geometry>
+          <mesh>
+            <uri>model://bag_duffel_23/meshes/visual.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="body_collision">
+        <geometry>
+          <box>
+            <size>0.7 0.4 0.32</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.7</mu>
+              <mu2>0.7</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

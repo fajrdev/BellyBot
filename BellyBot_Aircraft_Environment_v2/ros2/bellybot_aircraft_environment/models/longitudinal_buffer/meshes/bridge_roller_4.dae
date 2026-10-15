@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <created>2026-10-10T00:00:00Z</created>
+    <modified>2026-10-10T00:00:00Z</modified>
+    <unit name="meter" meter="1" />
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="p0effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <ambient><color>0.254118 0.277059 0.277059 1.000000</color></ambient><diffuse>
+              <color>0.5647058824 0.6156862745 0.6156862745 1</color>
+            </diffuse>
+          <specular><color>0.150000 0.150000 0.150000 1.000000</color></specular></lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+    <effect id="p1effect">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <ambient><color>0.072353 0.100588 0.114706 1.000000</color></ambient><diffuse>
+              <color>0.1607843137 0.2235294118 0.2549019608 1</color>
+            </diffuse>
+          <specular><color>0.150000 0.150000 0.150000 1.000000</color></specular></lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="p0material" name="drum">
+      <instance_effect url="#p0effect" />
+    </material>
+    <material id="p1material" name="shaft">
+      <instance_effect url="#p1effect" />
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="p0geometry" name="drum">
+      <mesh>
+        <source id="p0positions">
+          <float_array id="p0array" count="102">0 0.289 -1.769614625e-17 0.005 0.289 -1.769614625e-17 0.005 -0.289 1.769614625e-17 0 -0.289 1.769614625e-17 0.004619397663 0.289 0.001913417162 0.004619397663 -0.289 0.001913417162 0.003535533906 0.289 0.003535533906 0.003535533906 -0.289 0.003535533906 0.001913417162 0.289 0.004619397663 0.001913417162 -0.289 0.004619397663 3.061616998e-19 0.289 0.005 3.061616998e-19 -0.289 0.005 -0.001913417162 0.289 0.004619397663 -0.001913417162 -0.289 0.004619397663 -0.003535533906 0.289 0.003535533906 -0.003535533906 -0.289 0.003535533906 -0.004619397663 0.289 0.001913417162 -0.004619397663 -0.289 0.001913417162 -0.005 0.289 -1.708382285e-17 -0.005 -0.289 1.830846965e-17 -0.004619397663 0.289 -0.001913417162 -0.004619397663 -0.289 -0.001913417162 -0.003535533906 0.289 -0.003535533906 -0.003535533906 -0.289 -0.003535533906 -0.001913417162 0.289 -0.004619397663 -0.001913417162 -0.289 -0.004619397663 -9.184850994e-19 0.289 -0.005 -9.184850994e-19 -0.289 -0.005 0.001913417162 0.289 -0.004619397663 0.001913417162 -0.289 -0.004619397663 0.003535533906 0.289 -0.003535533906 0.003535533906 -0.289 -0.003535533906 0.004619397663 0.289 -0.001913417162 0.004619397663 -0.289 -0.001913417162</float_array>
+          <technique_common>
+            <accessor source="#p0array" count="34" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="p0normals"><float_array id="p0normals-array" count="102">0.000000 1.000000 0.000000 0.997793 0.005754 -0.066158 0.997793 -0.005754 0.066158 0.000000 -1.000000 0.000000 0.947158 0.005754 0.320717 0.896523 -0.005754 0.442960 0.752327 0.005754 0.658765 0.658765 -0.005754 0.752327 0.442960 0.005754 0.896523 0.320717 -0.005754 0.947158 0.066158 0.005754 0.997793 -0.066158 -0.005754 0.997793 -0.320717 0.005754 0.947158 -0.442960 -0.005754 0.896523 -0.658765 0.005754 0.752327 -0.752327 -0.005754 0.658765 -0.896523 0.005754 0.442960 -0.947158 -0.005754 0.320717 -0.997793 0.005754 0.066158 -0.997793 -0.005754 -0.066158 -0.947158 0.005754 -0.320717 -0.896523 -0.005754 -0.442960 -0.752327 0.005754 -0.658765 -0.658765 -0.005754 -0.752327 -0.442960 0.005754 -0.896523 -0.320717 -0.005754 -0.947158 -0.066158 0.005754 -0.997793 0.066158 -0.005754 -0.997793 0.320717 0.005754 -0.947158 0.442960 -0.005754 -0.896523 0.658765 0.005754 -0.752327 0.752327 -0.005754 -0.658765 0.896523 0.005754 -0.442960 0.947158 -0.005754 -0.320717</float_array><technique_common><accessor source="#p0normals-array" count="34" stride="3"><param name="X" type="float" /><param name="Y" type="float" /><param name="Z" type="float" /></accessor></technique_common></source><vertices id="p0vertices">
+          <input semantic="POSITION" source="#p0positions" />
+        <input semantic="NORMAL" source="#p0normals" /></vertices>
+        <triangles count="64" material="p0symbol">
+          <input semantic="VERTEX" source="#p0vertices" offset="0" />
+          <p>1 0 4 1 4 2 2 4 5 2 5 3 4 0 6 4 6 5 5 6 7 5 7 3 6 0 8 6 8 7 7 8 9 7 9 3 8 0 10 8 10 9 9 10 11 9 11 3 10 0 12 10 12 11 11 12 13 11 13 3 12 0 14 12 14 13 13 14 15 13 15 3 14 0 16 14 16 15 15 16 17 15 17 3 16 0 18 16 18 17 17 18 19 17 19 3 18 0 20 18 20 19 19 20 21 19 21 3 20 0 22 20 22 21 21 22 23 21 23 3 22 0 24 22 24 23 23 24 25 23 25 3 24 0 26 24 26 25 25 26 27 25 27 3 26 0 28 26 28 27 27 28 29 27 29 3 28 0 30 28 30 29 29 30 31 29 31 3 30 0 32 30 32 31 31 32 33 31 33 3 32 0 1 32 1 33 33 1 2 33 2 3</p>
+        </triangles>
+      </mesh>
+    </geometry>
+    <geometry id="p1geometry" name="shaft">
+      <mesh>
+        <source id="p1positions">
+          <float_array id="p1array" count="78">0 0.3 -1.836970199e-17 0.002 0.3 -1.836970199e-17 0.002 -0.3 1.836970199e-17 0 -0.3 1.836970199e-17 0.001732050808 0.3 0.001 0.001732050808 -0.3 0.001 0.001 0.3 0.001732050808 0.001 -0.3 0.001732050808 1.224646799e-19 0.3 0.002 1.224646799e-19 -0.3 0.002 -0.001 0.3 0.001732050808 -0.001 -0.3 0.001732050808 -0.001732050808 0.3 0.001 -0.001732050808 -0.3 0.001 -0.002 0.3 -1.812477263e-17 -0.002 -0.3 1.861463135e-17 -0.001732050808 0.3 -0.001 -0.001732050808 -0.3 -0.001 -0.001 0.3 -0.001732050808 -0.001 -0.3 -0.001732050808 -3.673940397e-19 0.3 -0.002 -3.673940397e-19 -0.3 -0.002 0.001 0.3 -0.001732050808 0.001 -0.3 -0.001732050808 0.001732050808 0.3 -0.001 0.001732050808 -0.3 -0.001</float_array>
+          <technique_common>
+            <accessor source="#p1array" count="26" stride="3">
+              <param name="X" type="float" />
+              <param name="Y" type="float" />
+              <param name="Z" type="float" />
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="p1normals"><float_array id="p1normals-array" count="78">0.000000 1.000000 0.000000 0.996033 0.002213 -0.088962 0.996033 -0.002213 0.088962 0.000000 -1.000000 0.000000 0.907071 0.002213 0.420973 0.818108 -0.002213 0.575060 0.575060 0.002213 0.818108 0.420973 -0.002213 0.907071 0.088962 0.002213 0.996033 -0.088962 -0.002213 0.996033 -0.420973 0.002213 0.907071 -0.575060 -0.002213 0.818108 -0.818108 0.002213 0.575060 -0.907071 -0.002213 0.420973 -0.996033 0.002213 0.088962 -0.996033 -0.002213 -0.088962 -0.907071 0.002213 -0.420973 -0.818108 -0.002213 -0.575060 -0.575060 0.002213 -0.818108 -0.420973 -0.002213 -0.907071 -0.088962 0.002213 -0.996033 0.088962 -0.002213 -0.996033 0.420973 0.002213 -0.907071 0.575060 -0.002213 -0.818108 0.818108 0.002213 -0.575060 0.907071 -0.002213 -0.420973</float_array><technique_common><accessor source="#p1normals-array" count="26" stride="3"><param name="X" type="float" /><param name="Y" type="float" /><param name="Z" type="float" /></accessor></technique_common></source><vertices id="p1vertices">
+          <input semantic="POSITION" source="#p1positions" />
+        <input semantic="NORMAL" source="#p1normals" /></vertices>
+        <triangles count="48" material="p1symbol">
+          <input semantic="VERTEX" source="#p1vertices" offset="0" />
+          <p>1 0 4 1 4 2 2 4 5 2 5 3 4 0 6 4 6 5 5 6 7 5 7 3 6 0 8 6 8 7 7 8 9 7 9 3 8 0 10 8 10 9 9 10 11 9 11 3 10 0 12 10 12 11 11 12 13 11 13 3 12 0 14 12 14 13 13 14 15 13 15 3 14 0 16 14 16 15 15 16 17 15 17 3 16 0 18 16 18 17 17 18 19 17 19 3 18 0 20 18 20 19 19 20 21 19 21 3 20 0 22 20 22 21 21 22 23 21 23 3 22 0 24 22 24 23 23 24 25 23 25 3 24 0 1 24 1 25 25 1 2 25 2 3</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="Scene" name="Scene">
+      <node id="p0" name="drum">
+        <instance_geometry url="#p0geometry">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="p0symbol" target="#p0material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+      <node id="p1" name="shaft">
+        <instance_geometry url="#p1geometry">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="p1symbol" target="#p1material" />
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#Scene" />
+  </scene>
+</COLLADA>

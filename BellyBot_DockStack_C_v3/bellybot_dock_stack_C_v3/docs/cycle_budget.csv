@@ -1,0 +1,5 @@
+phase,analytical_seconds
+Receive from staged infeed,1.3160740129524926
+Extend at layer height,1.3592353958776981
+Retract and advance belt,1.78125
+Verify and inter-command allowance,0.2

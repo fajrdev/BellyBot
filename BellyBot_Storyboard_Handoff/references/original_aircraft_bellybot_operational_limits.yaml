@@ -1,0 +1,23 @@
+# Implemented in scripts/aircraft_guard.py and aircraft_controller.py.
+# This is a human-readable summary, not a second control source.
+status: implemented_offline_checked_runtime_pending
+work_pose: {x: 4.10, y: 0.0, z: 0.003, yaw: 0.0}
+ceiling_height_m: 1.12
+roof_clearance_margin_m: 0.10
+wall_clearance_margin_m: 0.025
+work_mode_base_motion: locked
+entry_mode_base_speed_m_s: 0.06
+entry_mode_yaw_speed_rad_s: 0.05
+entry_deck_height_m: 0.18
+entry_requires: [empty_tray, fully_stowed_joints, docked_entry_platform, cleared_route]
+loaded_lift_caps_m: {bag_380mm: 0.13, bag_320mm: 0.19, bag_280mm: 0.23}
+receiving_lift_max_m: 0.13
+upper_yaw_deg: [-65, 65]
+yaw_requires: [lift_at_least_80mm, reach_at_most_500mm, level_tray, parked_buffer, folded_bridge]
+straight_reach_max_m: 1.0
+pressure_screen_kg_m2: 600
+payload_mass_max_kg: 32
+payload_envelope_m: [0.78, 0.50, 0.38]
+baggage_attachment: none
+feedback_timeout_s: 0.35
+stop_reset: restart_after_fault_investigation

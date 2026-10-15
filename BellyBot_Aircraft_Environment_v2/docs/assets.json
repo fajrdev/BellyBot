@@ -1,0 +1,100 @@
+{
+  "bag_duffel_23": {
+    "links": 1,
+    "joints": 0,
+    "static": false,
+    "assigned_mass_kg": 23.0,
+    "collisions": 1
+  },
+  "bag_fragile_20": {
+    "links": 1,
+    "joints": 0,
+    "static": false,
+    "assigned_mass_kg": 20.0,
+    "collisions": 1
+  },
+  "bag_hard_20": {
+    "links": 1,
+    "joints": 0,
+    "static": false,
+    "assigned_mass_kg": 20.0,
+    "collisions": 1
+  },
+  "bag_hard_26": {
+    "links": 1,
+    "joints": 0,
+    "static": false,
+    "assigned_mass_kg": 26.0,
+    "collisions": 1
+  },
+  "bag_hard_32": {
+    "links": 1,
+    "joints": 0,
+    "static": false,
+    "assigned_mass_kg": 32.0,
+    "collisions": 1
+  },
+  "belt_loader": {
+    "links": 2,
+    "joints": 2,
+    "static": false,
+    "assigned_mass_kg": 140.0,
+    "collisions": 11
+  },
+  "corner_transfer": {
+    "links": 8,
+    "joints": 8,
+    "static": false,
+    "assigned_mass_kg": 69.0,
+    "collisions": 75
+  },
+  "door_belt": {
+    "links": 4,
+    "joints": 4,
+    "static": false,
+    "assigned_mass_kg": 40.0,
+    "collisions": 7
+  },
+  "entry_deck": {
+    "links": 1,
+    "joints": 0,
+    "static": true,
+    "assigned_mass_kg": 0.0,
+    "collisions": 19
+  },
+  "longitudinal_buffer": {
+    "links": 14,
+    "joints": 14,
+    "static": false,
+    "assigned_mass_kg": 45.22,
+    "collisions": 66
+  },
+  "manual_workers": {
+    "links": 1,
+    "joints": 0,
+    "static": true,
+    "assigned_mass_kg": 0.0,
+    "collisions": 26
+  },
+  "nb_aft_stress": {
+    "links": 1,
+    "joints": 0,
+    "static": true,
+    "assigned_mass_kg": 0.0,
+    "collisions": 222
+  },
+  "nb_hold": {
+    "links": 1,
+    "joints": 0,
+    "static": true,
+    "assigned_mass_kg": 0.0,
+    "collisions": 172
+  },
+  "nb_hold_cutaway": {
+    "links": 1,
+    "joints": 0,
+    "static": true,
+    "assigned_mass_kg": 0.0,
+    "collisions": 172
+  }
+}

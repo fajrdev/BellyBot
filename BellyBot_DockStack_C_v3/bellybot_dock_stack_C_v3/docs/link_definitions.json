@@ -1,0 +1,2398 @@
+{
+  "base_link": {
+    "parent": null,
+    "joint": null,
+    "kind": "fixed",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 0,
+    "effort": 0,
+    "mass": 60,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          510,
+          360,
+          110
+        ],
+        "xyz": [
+          -385,
+          0,
+          110
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          510,
+          360,
+          110
+        ],
+        "xyz": [
+          385,
+          0,
+          110
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          260,
+          50,
+          110
+        ],
+        "xyz": [
+          0,
+          -155,
+          110
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          260,
+          50,
+          110
+        ],
+        "xyz": [
+          0,
+          155,
+          110
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          240,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          -117.5,
+          227.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          240,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          117.5,
+          227.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          230,
+          265
+        ],
+        "xyz": [
+          -117.5,
+          0,
+          227.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          230,
+          265
+        ],
+        "xyz": [
+          117.5,
+          0,
+          227.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          535,
+          820,
+          7
+        ],
+        "xyz": [
+          -392.5,
+          0,
+          256.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          535,
+          820,
+          7
+        ],
+        "xyz": [
+          392.5,
+          0,
+          256.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          250,
+          290,
+          7
+        ],
+        "xyz": [
+          0,
+          -270,
+          256.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          250,
+          290,
+          7
+        ],
+        "xyz": [
+          0,
+          270,
+          256.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "left_track_link": {
+    "parent": "base_link",
+    "joint": "left_track_mount",
+    "kind": "fixed",
+    "origin": [
+      0,
+      375.0,
+      84
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 0,
+    "effort": 0,
+    "mass": 14,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          1320,
+          350,
+          12
+        ],
+        "xyz": [
+          0,
+          0,
+          -78
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "left_wheel_0_link": {
+    "parent": "base_link",
+    "joint": "left_wheel_0_joint",
+    "kind": "continuous",
+    "origin": [
+      -660.0,
+      375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "left_wheel_1_link": {
+    "parent": "base_link",
+    "joint": "left_wheel_1_joint",
+    "kind": "continuous",
+    "origin": [
+      -330.0,
+      375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "left_wheel_2_link": {
+    "parent": "base_link",
+    "joint": "left_wheel_2_joint",
+    "kind": "continuous",
+    "origin": [
+      0.0,
+      375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "left_wheel_3_link": {
+    "parent": "base_link",
+    "joint": "left_wheel_3_joint",
+    "kind": "continuous",
+    "origin": [
+      330.0,
+      375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "left_wheel_4_link": {
+    "parent": "base_link",
+    "joint": "left_wheel_4_joint",
+    "kind": "continuous",
+    "origin": [
+      660.0,
+      375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "right_track_link": {
+    "parent": "base_link",
+    "joint": "right_track_mount",
+    "kind": "fixed",
+    "origin": [
+      0,
+      -375.0,
+      84
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 0,
+    "effort": 0,
+    "mass": 14,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          1320,
+          350,
+          12
+        ],
+        "xyz": [
+          0,
+          0,
+          -78
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "right_wheel_0_link": {
+    "parent": "base_link",
+    "joint": "right_wheel_0_joint",
+    "kind": "continuous",
+    "origin": [
+      -660.0,
+      -375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "right_wheel_1_link": {
+    "parent": "base_link",
+    "joint": "right_wheel_1_joint",
+    "kind": "continuous",
+    "origin": [
+      -330.0,
+      -375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "right_wheel_2_link": {
+    "parent": "base_link",
+    "joint": "right_wheel_2_joint",
+    "kind": "continuous",
+    "origin": [
+      0.0,
+      -375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "right_wheel_3_link": {
+    "parent": "base_link",
+    "joint": "right_wheel_3_joint",
+    "kind": "continuous",
+    "origin": [
+      330.0,
+      -375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "right_wheel_4_link": {
+    "parent": "base_link",
+    "joint": "right_wheel_4_joint",
+    "kind": "continuous",
+    "origin": [
+      660.0,
+      -375.0,
+      84
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 10,
+    "effort": 40,
+    "mass": 2,
+    "collisions": [],
+    "group": "robot"
+  },
+  "lift_stage_1": {
+    "parent": "base_link",
+    "joint": "lift_stage_1_joint",
+    "kind": "prismatic",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0.2,
+    "velocity": 0.12,
+    "effort": 3000,
+    "mass": 6,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          210,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          -102.5,
+          237.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          210,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          102.5,
+          237.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          200,
+          265
+        ],
+        "xyz": [
+          -102.5,
+          0,
+          237.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          200,
+          265
+        ],
+        "xyz": [
+          102.5,
+          0,
+          237.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "lift_stage_2": {
+    "parent": "lift_stage_1",
+    "joint": "lift_stage_2_joint",
+    "kind": "prismatic",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0.2,
+    "velocity": 0.12,
+    "effort": 3000,
+    "mass": 5,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          180,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          -87.5,
+          247.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          180,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          87.5,
+          247.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          170,
+          265
+        ],
+        "xyz": [
+          -87.5,
+          0,
+          247.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          170,
+          265
+        ],
+        "xyz": [
+          87.5,
+          0,
+          247.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "lift_stage_3": {
+    "parent": "lift_stage_2",
+    "joint": "lift_stage_3_joint",
+    "kind": "prismatic",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0.2,
+    "velocity": 0.12,
+    "effort": 3000,
+    "mass": 12,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          150,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          -72.5,
+          257.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          150,
+          5,
+          265
+        ],
+        "xyz": [
+          0,
+          72.5,
+          257.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          140,
+          265
+        ],
+        "xyz": [
+          -72.5,
+          0,
+          257.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5,
+          140,
+          265
+        ],
+        "xyz": [
+          72.5,
+          0,
+          257.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          330,
+          151,
+          12
+        ],
+        "xyz": [
+          0,
+          -89.5,
+          396
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          330,
+          151,
+          12
+        ],
+        "xyz": [
+          0,
+          89.5,
+          396
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          151,
+          28,
+          12
+        ],
+        "xyz": [
+          -89.5,
+          0,
+          396
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          151,
+          28,
+          12
+        ],
+        "xyz": [
+          89.5,
+          0,
+          396
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "yaw_carrier": {
+    "parent": "lift_stage_3",
+    "joint": "yaw_joint",
+    "kind": "revolute",
+    "origin": [
+      0,
+      0,
+      402
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": -1.6580627893946132,
+    "upper": 1.6580627893946132,
+    "velocity": 1.0,
+    "effort": 300,
+    "mass": 16,
+    "collisions": [
+      {
+        "kind": "cylinder",
+        "radius": 190,
+        "length": 10,
+        "xyz": [
+          0,
+          0,
+          34
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          135,
+          16,
+          16
+        ],
+        "xyz": [
+          -212.5,
+          -90,
+          21
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          40,
+          16,
+          45
+        ],
+        "xyz": [
+          -270,
+          -90,
+          -3.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          135,
+          16,
+          16
+        ],
+        "xyz": [
+          -212.5,
+          90,
+          21
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          40,
+          16,
+          45
+        ],
+        "xyz": [
+          -270,
+          90,
+          -3.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          135,
+          16,
+          16
+        ],
+        "xyz": [
+          212.5,
+          -90,
+          21
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          40,
+          16,
+          45
+        ],
+        "xyz": [
+          270,
+          -90,
+          -3.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          135,
+          16,
+          16
+        ],
+        "xyz": [
+          212.5,
+          90,
+          21
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          40,
+          16,
+          45
+        ],
+        "xyz": [
+          270,
+          90,
+          -3.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          50,
+          860,
+          20
+        ],
+        "xyz": [
+          -275,
+          0,
+          -16
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          50,
+          40,
+          28
+        ],
+        "xyz": [
+          -275,
+          -410,
+          8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          50,
+          40,
+          28
+        ],
+        "xyz": [
+          -275,
+          410,
+          8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          50,
+          860,
+          20
+        ],
+        "xyz": [
+          275,
+          0,
+          -16
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          50,
+          40,
+          28
+        ],
+        "xyz": [
+          275,
+          -410,
+          8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          50,
+          40,
+          28
+        ],
+        "xyz": [
+          275,
+          410,
+          8
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          870,
+          24,
+          60
+        ],
+        "xyz": [
+          0,
+          -410,
+          52
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          870,
+          24,
+          60
+        ],
+        "xyz": [
+          0,
+          410,
+          52
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "extension_mid": {
+    "parent": "yaw_carrier",
+    "joint": "extension_mid_joint",
+    "kind": "prismatic",
+    "origin": [
+      0,
+      0,
+      20
+    ],
+    "axis": [
+      1,
+      0,
+      0
+    ],
+    "lower": 0,
+    "upper": 0.5,
+    "velocity": 0.7,
+    "effort": 1400,
+    "mass": 8,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          830,
+          20,
+          54
+        ],
+        "xyz": [
+          0,
+          -363,
+          34
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          830,
+          20,
+          54
+        ],
+        "xyz": [
+          0,
+          363,
+          34
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          26,
+          746,
+          6
+        ],
+        "xyz": [
+          -475,
+          0,
+          25
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          80,
+          20,
+          6
+        ],
+        "xyz": [
+          -445,
+          -363,
+          25
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          80,
+          20,
+          6
+        ],
+        "xyz": [
+          -445,
+          363,
+          25
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "tray_carriage": {
+    "parent": "extension_mid",
+    "joint": "extension_tip_joint",
+    "kind": "prismatic",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      1,
+      0,
+      0
+    ],
+    "lower": 0,
+    "upper": 0.5,
+    "velocity": 0.7,
+    "effort": 1400,
+    "mass": 6,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          880,
+          16,
+          48
+        ],
+        "xyz": [
+          0,
+          -325,
+          34
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          880,
+          16,
+          48
+        ],
+        "xyz": [
+          0,
+          325,
+          34
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          24,
+          660,
+          6
+        ],
+        "xyz": [
+          -455,
+          0,
+          39
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          42,
+          16,
+          6
+        ],
+        "xyz": [
+          -446,
+          -325,
+          39
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          42,
+          16,
+          6
+        ],
+        "xyz": [
+          -446,
+          325,
+          39
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "tray": {
+    "parent": "tray_carriage",
+    "joint": "tray_pitch_joint",
+    "kind": "revolute",
+    "origin": [
+      -430,
+      0,
+      81.5
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0.5585053606381855,
+    "velocity": 0.6,
+    "effort": 450,
+    "mass": 10,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          900,
+          600,
+          2
+        ],
+        "xyz": [
+          430.0,
+          0.0,
+          -32.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          880,
+          20,
+          21
+        ],
+        "xyz": [
+          430.0,
+          -290.0,
+          -21.0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          880,
+          20,
+          21
+        ],
+        "xyz": [
+          430.0,
+          290.0,
+          -21.0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          770,
+          13,
+          42
+        ],
+        "xyz": [
+          430.0,
+          -290.0,
+          10.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          770,
+          13,
+          42
+        ],
+        "xyz": [
+          430.0,
+          290.0,
+          10.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          22.25
+        ],
+        "xyz": [
+          879.6875,
+          0.0,
+          -22.375
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          19.5
+        ],
+        "xyz": [
+          885.0625,
+          0.0,
+          -23.75
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          16.75
+        ],
+        "xyz": [
+          890.4375,
+          0.0,
+          -25.125
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          14.0
+        ],
+        "xyz": [
+          895.8125,
+          0.0,
+          -26.5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          11.25
+        ],
+        "xyz": [
+          901.1875,
+          0.0,
+          -27.875
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          8.5
+        ],
+        "xyz": [
+          906.5625,
+          0.0,
+          -29.25
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          5.75
+        ],
+        "xyz": [
+          911.9375,
+          0.0,
+          -30.625
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          5.375,
+          550,
+          3.0
+        ],
+        "xyz": [
+          917.3125,
+          0.0,
+          -32.0
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "tray_belt": {
+    "parent": "tray",
+    "joint": "tray_belt_mount",
+    "kind": "fixed",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 0,
+    "effort": 0,
+    "mass": 1,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          860,
+          550,
+          1.5
+        ],
+        "xyz": [
+          430.0,
+          0.0,
+          -9.25
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "robot"
+  },
+  "tray_rear_roller": {
+    "parent": "tray",
+    "joint": "tray_rear_roller_joint",
+    "kind": "continuous",
+    "origin": [
+      0.0,
+      0.0,
+      -20.0
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 165,
+    "effort": 20,
+    "mass": 0.5,
+    "collisions": [],
+    "group": "robot"
+  },
+  "tray_front_roller": {
+    "parent": "tray",
+    "joint": "tray_front_roller_joint",
+    "kind": "continuous",
+    "origin": [
+      860.0,
+      0.0,
+      -20.0
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 165,
+    "effort": 20,
+    "mass": 0.5,
+    "collisions": [],
+    "group": "robot"
+  },
+  "infeed_base": {
+    "parent": null,
+    "joint": null,
+    "kind": "fixed",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 0,
+    "effort": 0,
+    "mass": 24,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          700,
+          720,
+          10
+        ],
+        "xyz": [
+          -1550,
+          0,
+          5
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1800,
+          -275.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1800,
+          -244.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1815.5,
+          -260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1784.5,
+          -260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1800,
+          244.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1800,
+          275.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1815.5,
+          260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1784.5,
+          260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1300,
+          -275.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1300,
+          -244.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1315.5,
+          -260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1284.5,
+          -260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1300,
+          244.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          34,
+          3,
+          370
+        ],
+        "xyz": [
+          -1300,
+          275.5,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1315.5,
+          260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          3,
+          28,
+          370
+        ],
+        "xyz": [
+          -1284.5,
+          260,
+          195
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "infeed"
+  },
+  "infeed_lift": {
+    "parent": "infeed_base",
+    "joint": "infeed_lift_joint",
+    "kind": "prismatic",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0.25,
+    "velocity": 0.12,
+    "effort": 2000,
+    "mass": 6,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          24,
+          24,
+          360
+        ],
+        "xyz": [
+          -1800,
+          -260,
+          250
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          24,
+          24,
+          360
+        ],
+        "xyz": [
+          -1800,
+          260,
+          250
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          24,
+          24,
+          360
+        ],
+        "xyz": [
+          -1300,
+          -260,
+          250
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          24,
+          24,
+          360
+        ],
+        "xyz": [
+          -1300,
+          260,
+          250
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          950,
+          40,
+          35
+        ],
+        "xyz": [
+          -1570,
+          -255,
+          425
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          950,
+          40,
+          35
+        ],
+        "xyz": [
+          -1570,
+          255,
+          425
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "infeed"
+  },
+  "infeed_carriage": {
+    "parent": "infeed_lift",
+    "joint": "infeed_extension_joint",
+    "kind": "prismatic",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      1,
+      0,
+      0
+    ],
+    "lower": 0,
+    "upper": 0.4,
+    "velocity": 0.12,
+    "effort": 800,
+    "mass": 8,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          1000,
+          25,
+          32
+        ],
+        "xyz": [
+          -1370,
+          -296,
+          469
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      },
+      {
+        "kind": "box",
+        "size": [
+          1000,
+          25,
+          32
+        ],
+        "xyz": [
+          -1370,
+          296,
+          469
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "infeed"
+  },
+  "infeed_belt": {
+    "parent": "infeed_carriage",
+    "joint": "infeed_belt_mount",
+    "kind": "fixed",
+    "origin": [
+      0,
+      0,
+      0
+    ],
+    "axis": [
+      0,
+      0,
+      1
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 0,
+    "effort": 0,
+    "mass": 1,
+    "collisions": [
+      {
+        "kind": "box",
+        "size": [
+          960,
+          550,
+          2
+        ],
+        "xyz": [
+          -1370,
+          0,
+          494
+        ],
+        "rpy": [
+          0,
+          0,
+          0
+        ]
+      }
+    ],
+    "group": "infeed"
+  },
+  "infeed_rear_roller": {
+    "parent": "infeed_carriage",
+    "joint": "infeed_rear_roller_joint",
+    "kind": "continuous",
+    "origin": [
+      -1850,
+      0,
+      483
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 165,
+    "effort": 20,
+    "mass": 0.5,
+    "collisions": [],
+    "group": "infeed"
+  },
+  "infeed_front_roller": {
+    "parent": "infeed_carriage",
+    "joint": "infeed_front_roller_joint",
+    "kind": "continuous",
+    "origin": [
+      -890,
+      0,
+      483
+    ],
+    "axis": [
+      0,
+      1,
+      0
+    ],
+    "lower": 0,
+    "upper": 0,
+    "velocity": 165,
+    "effort": 20,
+    "mass": 0.5,
+    "collisions": [],
+    "group": "infeed"
+  }
+}

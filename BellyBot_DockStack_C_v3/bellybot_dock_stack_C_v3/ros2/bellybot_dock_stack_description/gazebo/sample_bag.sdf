@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="sample_bag_32kg" canonical_link="bag">
+    <self_collide>true</self_collide>
+    <link name="bag">
+      <pose>0 0 0 0 0 0</pose>
+      <inertial>
+        <pose>0 0 0.14 0 0 0</pose>
+        <mass>32</mass>
+        <inertia>
+          <ixx>0.8234666666666667</ixx>
+          <iyy>1.7493333333333334</iyy>
+          <izz>2.154666666666667</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="orange_bag_shell">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/orange_bag_shell.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.96 0.39 0.06 1</ambient>
+          <diffuse>0.96 0.39 0.06 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <visual name="bag_shell_ribs">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/bag_shell_ribs.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.96 0.39 0.06 1</ambient>
+          <diffuse>0.96 0.39 0.06 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <visual name="bag_seam">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/bag_seam.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.12 0.15 0.17 1</ambient>
+          <diffuse>0.12 0.15 0.17 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <visual name="bag_handle">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/bag_handle.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.12 0.15 0.17 1</ambient>
+          <diffuse>0.12 0.15 0.17 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <visual name="bag_corner_-345.0_-205.0">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/bag_corner_-345.0_-205.0.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.12 0.15 0.17 1</ambient>
+          <diffuse>0.12 0.15 0.17 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <visual name="bag_corner_-345.0_205.0">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/bag_corner_-345.0_205.0.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.12 0.15 0.17 1</ambient>
+          <diffuse>0.12 0.15 0.17 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <visual name="bag_corner_345.0_-205.0">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/bag_corner_345.0_-205.0.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.12 0.15 0.17 1</ambient>
+          <diffuse>0.12 0.15 0.17 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <visual name="bag_corner_345.0_205.0">
+        <geometry>
+          <mesh>
+            <uri>model://bellybot_dock_stack_description/meshes/bag_corner_345.0_205.0.stl</uri>
+            <scale>0.001 0.001 0.001</scale>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.12 0.15 0.17 1</ambient>
+          <diffuse>0.12 0.15 0.17 1</diffuse>
+          <specular>.1 .1 .1 1</specular>
+        </material>
+      </visual>
+      <collision name="collision_0">
+        <pose>0 0 0.14 0 0 0</pose>
+        <geometry>
+          <box>
+            <size>0.76 0.48 0.28</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.5</mu>
+              <mu2>0.5</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,38 @@
+Panels:
+- Class: rviz_common/Displays
+  Name: Displays
+Visualization Manager:
+  Class: ''
+  Global Options:
+    Fixed Frame: base_link
+    Background Color: 241; 244; 240
+    Frame Rate: 60
+  Displays:
+  - Class: rviz_default_plugins/Grid
+    Name: Floor grid
+    Enabled: true
+    Cell Size: 0.1
+    Plane Cell Count: 40
+  - Class: rviz_default_plugins/RobotModel
+    Name: BELLYBOT Dock & Stack
+    Enabled: true
+    Description Source: Topic
+    Description Topic:
+      Value: /robot_description
+      Reliability Policy: Reliable
+      Durability Policy: Transient Local
+    Visual Enabled: true
+    Collision Enabled: false
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 3.3
+      Pitch: 0.45
+      Yaw: 0.85
+      Focal Point:
+        X: -0.3
+        Y: 0
+        Z: 0.35
+Window Geometry:
+  Width: 1280
+  Height: 800

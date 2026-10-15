@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot name="test_bag_32kg">
+  <link name="bag">
+    <inertial>
+      <origin xyz="0 0 0.14" rpy="0 0 0" />
+      <mass value="32" />
+      <inertia ixx="0.8234666666666667" iyy="1.7493333333333334" izz="2.154666666666667" ixy="0" ixz="0" iyz="0" />
+    </inertial>
+    <visual name="orange_bag_shell">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/orange_bag_shell.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="orange">
+        <color rgba="0.96 0.39 0.06 1" />
+      </material>
+    </visual>
+    <visual name="bag_shell_ribs">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/bag_shell_ribs.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="orange">
+        <color rgba="0.96 0.39 0.06 1" />
+      </material>
+    </visual>
+    <visual name="bag_seam">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/bag_seam.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.12 0.15 0.17 1" />
+      </material>
+    </visual>
+    <visual name="bag_handle">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/bag_handle.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.12 0.15 0.17 1" />
+      </material>
+    </visual>
+    <visual name="bag_corner_-345.0_-205.0">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/bag_corner_-345.0_-205.0.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.12 0.15 0.17 1" />
+      </material>
+    </visual>
+    <visual name="bag_corner_-345.0_205.0">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/bag_corner_-345.0_205.0.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.12 0.15 0.17 1" />
+      </material>
+    </visual>
+    <visual name="bag_corner_345.0_-205.0">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/bag_corner_345.0_-205.0.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.12 0.15 0.17 1" />
+      </material>
+    </visual>
+    <visual name="bag_corner_345.0_205.0">
+      <geometry>
+        <mesh filename="package://bellybot_dock_stack_description/meshes/bag_corner_345.0_205.0.stl" scale="0.001 0.001 0.001" />
+      </geometry>
+      <material name="dark">
+        <color rgba="0.12 0.15 0.17 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.14" rpy="0 0 0" />
+      <geometry>
+        <box size="0.76 0.48 0.28" />
+      </geometry>
+    </collision>
+  </link>
+</robot>

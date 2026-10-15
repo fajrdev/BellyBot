@@ -1,0 +1,26 @@
+{
+  "revision": "2.0",
+  "date": "2026-10-10",
+  "robot": "Bundled unchanged BellyBot DockStack C v3 ROS package and original CAD source",
+  "new_scenarios": [
+    "entry_resolved",
+    "transfer_resolved",
+    "transfer_cutaway"
+  ],
+  "robot_dimension_changed": false,
+  "aircraft_dimensions_enlarged": false,
+  "verification": [
+    "CAD valid STEP reimports",
+    "Entry/pivot whole-triangle clearance",
+    "Sampled ramp envelope and transfer motion",
+    "477 conservative robot/buffer pose bounds",
+    "10 meaningful controller interlock/limit checks",
+    "Local resources, inertia and URDF graphs"
+  ],
+  "runtime_tested": false,
+  "supports_12_bags_per_min_demonstrated": false,
+  "preview_video": "30 seconds, CAD kinematics, time compressed; not physics or throughput evidence",
+  "setup_condition": "Entry fixtures removed before work fixtures installed; docked service platform assumed; changeover not automated",
+  "primary_CAD": "exports/BellyBot_Aircraft_Work_Assembly_R2_mm.step",
+  "primary_review": "docs/Resolution_Review_R2.pdf"
+}

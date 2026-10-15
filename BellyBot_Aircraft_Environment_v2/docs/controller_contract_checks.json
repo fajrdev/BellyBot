@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "checks": [
+    "Reject receiving lift above matched conveyor stroke",
+    "Initial horizontal bridge folds before moving other joints",
+    "Reject rotation with unfolded bridge",
+    "Reject rotation below inlet clearance height",
+    "Lost tracked bag pose stops sequence",
+    "Reject mismatched belt heights",
+    "Timed out phase latches fault",
+    "Reject bag fallen below the conveyor",
+    "Yaw plan raises and retracts before yaw",
+    "Bag-height caps are conservative and reproducible"
+  ],
+  "scope": "Pure logic only. No ROS, Gazebo or free-payload dynamics executed."
+}

@@ -1,0 +1,221 @@
+{
+  "archives": [
+    {
+      "filename": "BellyBot_Aircraft_Environment_v2.zip",
+      "sha256": "6aae7f4247b800bd232a2ef96ef8b2dded195b365111400f2c5fd5610eeeb46f",
+      "zip_entries": 1312
+    },
+    {
+      "filename": "BellyBot_DockStack_C_v3-5.zip",
+      "sha256": "dc1de60ddc3b40a6a9f0e2a0f7302ef99b406451e64eca66fb9e6edad77814f8",
+      "zip_entries": 322
+    }
+  ],
+  "robot_nonfixed_joints": [
+    {
+      "name": "left_wheel_0_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "left_wheel_1_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "left_wheel_2_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "left_wheel_3_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "left_wheel_4_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "right_wheel_0_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "right_wheel_1_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "right_wheel_2_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "right_wheel_3_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "right_wheel_4_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "10",
+        "effort": "40"
+      }
+    },
+    {
+      "name": "lift_stage_1_joint",
+      "type": "prismatic",
+      "limits": {
+        "velocity": "0.12",
+        "effort": "3000",
+        "lower": "0",
+        "upper": "0.2"
+      }
+    },
+    {
+      "name": "lift_stage_2_joint",
+      "type": "prismatic",
+      "limits": {
+        "velocity": "0.12",
+        "effort": "3000",
+        "lower": "0",
+        "upper": "0.2"
+      }
+    },
+    {
+      "name": "lift_stage_3_joint",
+      "type": "prismatic",
+      "limits": {
+        "velocity": "0.12",
+        "effort": "3000",
+        "lower": "0",
+        "upper": "0.2"
+      }
+    },
+    {
+      "name": "yaw_joint",
+      "type": "revolute",
+      "limits": {
+        "velocity": "1.0",
+        "effort": "300",
+        "lower": "-1.6580627893946132",
+        "upper": "1.6580627893946132"
+      }
+    },
+    {
+      "name": "extension_mid_joint",
+      "type": "prismatic",
+      "limits": {
+        "velocity": "0.7",
+        "effort": "1400",
+        "lower": "0",
+        "upper": "0.5"
+      }
+    },
+    {
+      "name": "extension_tip_joint",
+      "type": "prismatic",
+      "limits": {
+        "velocity": "0.7",
+        "effort": "1400",
+        "lower": "0",
+        "upper": "0.5"
+      }
+    },
+    {
+      "name": "tray_pitch_joint",
+      "type": "revolute",
+      "limits": {
+        "velocity": "0.6",
+        "effort": "450",
+        "lower": "0",
+        "upper": "0.5585053606381855"
+      }
+    },
+    {
+      "name": "tray_rear_roller_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "165",
+        "effort": "20"
+      }
+    },
+    {
+      "name": "tray_front_roller_joint",
+      "type": "continuous",
+      "limits": {
+        "velocity": "165",
+        "effort": "20"
+      }
+    }
+  ],
+  "world_models": {
+    "/worlds/entry_resolved.sdf": {
+      "embedded": [
+        "apron",
+        "bellybot_dock_stack"
+      ],
+      "includes": [
+        "model://nb_hold",
+        "model://entry_deck"
+      ]
+    },
+    "/worlds/transfer_resolved.sdf": {
+      "embedded": [
+        "apron",
+        "bellybot_dock_stack"
+      ],
+      "includes": [
+        "model://nb_hold",
+        "model://belt_loader",
+        "model://door_belt",
+        "model://corner_transfer",
+        "model://longitudinal_buffer"
+      ]
+    },
+    "/worlds/transfer_cutaway.sdf": {
+      "embedded": [
+        "apron",
+        "bellybot_dock_stack"
+      ],
+      "includes": [
+        "model://nb_hold_cutaway",
+        "model://belt_loader",
+        "model://door_belt",
+        "model://corner_transfer",
+        "model://longitudinal_buffer"
+      ]
+    }
+  },
+  "note": "Static inspection only; no ROS/Gazebo run performed."
+}

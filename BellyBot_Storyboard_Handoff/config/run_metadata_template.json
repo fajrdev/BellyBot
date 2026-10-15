@@ -1,0 +1,23 @@
+{
+  "status": "template_not_results",
+  "run_id": null,
+  "source_revision": null,
+  "ros_distro": null,
+  "gazebo_version": null,
+  "physics_backend": null,
+  "timestep_s": null,
+  "seed": null,
+  "observer_mode": null,
+  "initial_queue_bag_ids": [],
+  "initial_tray_bag_id": null,
+  "measurement_t0_sim_s": null,
+  "measurement_t1_sim_s": null,
+  "completed_placements": null,
+  "loading_rate_bags_min": null,
+  "rate_scope": null,
+  "manual_interventions": [],
+  "minimum_clearances_m": null,
+  "floor_load_screen_kg_m2": null,
+  "measured_floor_load_kg_m2": null,
+  "test_results": []
+}

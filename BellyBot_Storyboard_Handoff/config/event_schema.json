@@ -1,0 +1,40 @@
+{
+  "status": "proposed_not_implemented",
+  "required_fields": {
+    "run_id": "string",
+    "sim_time_s": "number",
+    "event": "string",
+    "bag_id": "string_or_null",
+    "target_id": "string_or_null",
+    "state": "string",
+    "evidence_mode": "contact_and_pose | pose_proxy | manual | concept",
+    "details": "object"
+  },
+  "events": [
+    "run_started",
+    "source_bag_created",
+    "dock_reserved",
+    "bag_received",
+    "support_confirmed",
+    "placement_candidate",
+    "placement_complete",
+    "placement_failed",
+    "bag_retrieved",
+    "unload_complete",
+    "fault_detected",
+    "stop_commanded",
+    "motion_stopped",
+    "recovery_requested",
+    "reset_accepted",
+    "reset_rejected",
+    "manual_setup",
+    "exit_complete",
+    "run_ended"
+  ],
+  "rules": [
+    "monotonic simulation timestamps within run",
+    "unique bag IDs; deduplicate placement completions",
+    "new run ID after clock reset",
+    "no hard-coded success events"
+  ]
+}

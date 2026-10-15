@@ -1,0 +1,36 @@
+# ROS 2 workspace build artifacts
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+venv_cad/
+ENV/
+env/
+
+# Gazebo logs & temporary files
+.gz/
+.ignition/
+*.log
+
+# Editor & OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Test outputs & scratch artifacts if temporary
+results/*.tmp
+
+# Archive zips and generated video files
+*.zip
+archives/*.zip
+videos/
+.commandcode/
