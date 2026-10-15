@@ -1,0 +1,68 @@
+run_id,sim_time_s,event,bag_id,target_id,details
+phase_d_single_bag,0.932,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,0.96,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,4.48,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,0.955,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,0.98,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,4.48,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,1.061,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,1.1,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,6.62,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,0.996,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,1.02,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,6.54,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,1.007,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,1.04,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,6.56,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,83.86,placement_candidate,test_bag_32kg,target_cell_1,"{""target_pose"": [0.0, 0.0, 0.74, 0.5393067388662478]}"
+phase_d_single_bag,1.064,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,1.1,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,6.62,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,1.014,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,1.04,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,6.56,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,85.88,placement_candidate,test_bag_32kg,target_cell_1,"{""target_pose"": [0.0, 0.0, 0.74, 0.5393067388662478]}"
+phase_d_single_bag,92.42,placement_complete,test_bag_32kg,target_cell_1,"{""placement_count"": 1}"
+phase_d_single_bag,0.992,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,1.02,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,6.54,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,85.92,placement_candidate,test_bag_32kg,target_cell_1,"{""target_pose"": [0.0, 0.0, 0.74, 0.5393067388662478]}"
+phase_d_single_bag,92.46,placement_complete,test_bag_32kg,target_cell_1,"{""placement_count"": 1}"
+phase_d_single_bag,0.996,dock_reserved,test_bag_32kg,target_cell_1,{}
+phase_d_single_bag,1.02,bag_received,test_bag_32kg,target_cell_1,"{""infeed_started"": true}"
+phase_d_single_bag,6.54,support_confirmed,test_bag_32kg,target_cell_1,"{""tray_supported"": true}"
+phase_d_single_bag,85.901,placement_candidate,test_bag_32kg,target_cell_1,"{""target_pose"": [0.0, 0.0, 0.74, 0.5393067388662478]}"
+phase_d_single_bag,91.766,placement_complete,test_bag_32kg,cell_1,"{""sim_time_s"": 91.766, ""pose"": [5.144, -0.023, 0.284]}"
+phase_d_single_bag,92.44,placement_complete,test_bag_32kg,target_cell_1,"{""placement_count"": 1}"
+phase_d_unload_test,1.014,unload_started,test_unload_bag,,{}
+phase_d_unload_test,1.27,placement_complete,test_unload_bag,cell_1,"{""sim_time_s"": 1.27, ""pose"": [4.75, -0.0, 0.159]}"
+phase_d_unload_test,84.141,bag_retrieved,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,166.82,unload_complete,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,1.048,unload_started,test_unload_bag,,{}
+phase_d_unload_test,1.278,placement_complete,test_unload_bag,cell_1,"{""sim_time_s"": 1.278, ""pose"": [4.55, -0.0, 0.159]}"
+phase_d_unload_test,85.701,bag_retrieved,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,170.32,unload_complete,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,1.009,unload_started,test_unload_bag,,{}
+phase_d_unload_test,1.274,placement_complete,test_unload_bag,cell_1,"{""sim_time_s"": 1.274, ""pose"": [5.0, -0.0, 0.159]}"
+phase_d_unload_test,85.76,bag_retrieved,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,170.52,unload_complete,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,1.012,unload_started,test_unload_bag,,{}
+phase_d_unload_test,1.269,placement_complete,test_unload_bag,cell_1,"{""sim_time_s"": 1.269, ""pose"": [5.0, -0.0, 0.159]}"
+phase_d_unload_test,83.521,bag_retrieved,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,165.98,unload_complete,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,1.015,unload_started,test_unload_bag,,{}
+phase_d_unload_test,1.27,placement_complete,test_unload_bag,cell_1,"{""sim_time_s"": 1.27, ""pose"": [5.0, -0.0, 0.159]}"
+phase_d_unload_test,83.981,bag_retrieved,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+phase_d_unload_test,170.38,unload_complete,test_unload_bag,,"{""bag_id"": ""test_unload_bag""}"
+scoop_diag,0.701,placement_complete,scoop_bag,cell_1,"{""sim_time_s"": 0.701, ""pose"": [5.0, -0.0, 0.16]}"
+phase_d_reverse_discharge,1.692,unload_started,tray_discharge_bag,,{}
+phase_d_reverse_discharge,82.942,unload_complete,tray_discharge_bag,apron,"{""sim_time_s"": 82.942, ""exit_y"": -2.602}"
+phase_d_reverse_discharge,89.74,unload_complete,tray_discharge_bag,,"{""bag_id"": ""tray_discharge_bag""}"
+phase_d_stop_test,1.001,stop_commanded,,,"{""reason"": ""E-Stop commanded via /mission/stop""}"
+phase_d_stop_test,2.177,reset_accepted,,,"{""reason"": ""Reset accepted: operator authorized and preconditions met.""}"
+phase_d_stop_test,1.001,stop_commanded,,,"{""reason"": ""E-Stop commanded via /mission/stop""}"
+phase_d_stop_test,2.151,reset_accepted,,,"{""reason"": ""Reset accepted: operator authorized and preconditions met.""}"
+scene03_continuous_measurement,0.615,unload_complete,scene03_bag_1,apron,"{""sim_time_s"": 0.615, ""exit_y"": -3.3}"
+scene03_continuous_measurement,1.035,dock_reserved,scene03_bag_1,cell_1,{}
+scene03_continuous_measurement,1.06,bag_received,scene03_bag_1,cell_1,"{""infeed_started"": true}"
+scene03_continuous_measurement,6.58,support_confirmed,scene03_bag_1,cell_1,"{""tray_supported"": true}"

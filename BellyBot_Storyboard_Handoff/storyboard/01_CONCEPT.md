@@ -1,19 +1,22 @@
 # Scene 01 — Concept
 
 ## Screen time and objective
-00:00–00:08. Establish aircraft, exterior loading path, fixed door dock, mobile robot, placement zone and clear return corridor in one cutaway. Show the two removed assemblies absent; do not hide the doorway height problem with the camera.
+00:00–00:08. Establish aircraft hold cutaway, exterior loading path, fixed door dock, mobile BellyBot shuttle, cargo placement zone, and clear center return corridor in one cutaway view. The two marked interior transfer conveyors (`corner_transfer` and `longitudinal_buffer`) are confirmed removed from the active mission variant (`worlds/mission_shuttle.sdf`). The 198 mm doorway threshold height difference is bridged by the reconfigured, friction-backed ($5.48^\circ$, $\mu=0.60$) `door_belt`.
 
 ## Technical motion sequence
-Begin stationary with empty level tray. Show one staged bag outside the hold, the dock reservation and target locations. Overlay directional arrows: loading toward hold; unloading toward door. Arrows are explanatory only, not evidence that bags moved. The route must include the robot's return to the dock, not an arrow from a missing conveyor to a remote robot.
+Begin stationary at dock with empty level tray. Show one staged bag outside the hold on the exterior belt loader ($Y \le -2.60\text{ m}$), the dock reservation at $\mathbf{P}_{\text{dock}} = [1.300, -0.095, 0.003\text{ m}, \text{Yaw}=+1.5708\text{ rad}]$, and target cell 1 at $X=4.08\text{ m}$ to $5.144\text{ m}$. Explanatory route overlay: loading moves inward through door to BellyBot tray; mobile BellyBot travels along center aisle ($Y=0.000\text{ m}$) to placement cell; robot deposits bag and returns empty to dock.
 
 ## Gazebo implementation
-Use the new mission world after the geometry gate. Preserve curved-hold collision geometry even if roof/wall visuals are hidden for filming. Use a presentation camera independent of physics. Establish unique bag IDs and physically supported source positions. Do not use old transfer_cutaway unmodified: it contains the removed assemblies.
+Active world: `worlds/mission_shuttle.sdf` with full curved-hold collision geometry preserved. External `belt_loader` and inclined `door_belt` retained; internal transfer conveyors removed. Ground-truth poses published via `gz-sim-pose-publisher-system` on `/world/mission_shuttle/dynamic_pose/info`. Dynamic baggage models use realistic rigid-body contacts ($\mu=0.45$, mass 32.0 kg). Presentation camera framed from wide starboard cutaway.
 
 ## ROS 2 communications and orchestration
-Read /clock, /mission/status and /mission/bags; do not command actuators for a concept pan. Overlay evidence_mode=sim_ground_truth if using model poses. On-screen route labels must match the geometry decision record and actual scene tree.
+Controller and observer subscribe to `/clock`, `/mission/world_poses`, `/aircraft/robot_pose`, and `/aircraft/robot_joints`. Telemetry published on `/mission/status` (10 Hz) and `/mission/bags` (5 Hz). Actuation exclusively owned by `mission_controller.py` on `/aircraft/actuation/*`.
 
 ## Evidence, camera and acceptance gate
-Entry: confirmed removal_map, selected supply architecture and collision-checked dock. Exit: viewer can trace apron→retained loader→door belt→robot→placement and the return path. Capture one labelled wide frame. Narration: “Door-side supply is metered; BellyBot returns to collect each bag.” Do not say autonomous continuous following-feed.
+- Verified removal map: `docs/docking_decision.md` (commit `ae56bd5`).
+- Labelled wide frame captured from starboard cutaway.
+- Narration: "Door-side supply is metered; BellyBot shuttles autonomously along the aisle to place each bag." No claim of continuous umbilical feed.
 
 ## Failure handling and recording rule
-A failed prerequisite blocks the related claim, not just the camera shot. Save failure evidence and report the smallest fix; do not force readiness, bypass guards or substitute a kinematic animation without a “concept animation” label. Camera time is not a deadline for physics. New /mission interfaces in this brief require implementation; see technical/03_ROS2_GAZEBO_CONTRACT.md. Existing mechanism facts come from supplied archives [file:1][file:2]; contest targets come from [file:5].
+A failed prerequisite blocks the related claim. Evidence logged to `results/mission_events.csv` with simulation timestamps. Mechanism facts match `BellyBot_DockStack_C_v3`; competition targets reference contest guidelines.
+

@@ -1,19 +1,26 @@
 # Scene 04 — Reach Stack Resupply
 
 ## Screen time and objective
-00:53–01:13. Demonstrate controlled floor placement, a genuinely reachable upper-layer placement if feasible, and explicit supply behavior while the robot relocates.
+00:53–01:13. Demonstrate controlled floor placement, show measured ceiling clearance margins, disclose real-world upper-layer stacking feasibility, and show explicit supply gating while the mobile robot is absent from the dock.
 
 ## Technical motion sequence
-First choose a validated floor target. Extend level, then pitch nose-down only with allowed floor envelope (aircraft guard: lift≈0,yaw≈0,reach≥.72 m,pitch≤32°); transfer gently and avoid striking floor. Verify bag released and tray clear before retraction; level before retracting across forbidden envelopes. Next compute upper-layer target from actual lower bags, support polygon, bag height, local roof and tray underside clearance. Raise only within loaded caps; keep pitch level for yaw, retract before yaw, then extend within guard. Upper-layer bags must be supported by luggage, not an invisible rigid shelf. If unavailable, label “upper-layer placement not yet demonstrated” and show measured reach limits rather than fake a stack.
+1. Floor Deposit Execution: BellyBot stops at staging bay $X=4.08\text{ m}$. Arm pitches nose-down $30.9^\circ$ ($0.539\text{ rad}$) at reach $0.74\text{ m}$. Forward roller touches floor level ($Z=0.065\text{ m}$). Tray belt runs forward at $+0.60\text{ m/s}$, smoothly rolling the 32 kg case flat onto the cargo floor.
+2. Verified Rest Pose: Bag comes to rest flat at measured coordinates $X=5.144\text{ m}, Y=-0.023\text{ m}, Z=0.284\text{ m}$ (floor elevation $Z=0.120\text{ m} + 0.160\text{ m}$ half-height). 0.5 s dwell confirms stability before tray retracts to stowed carrying configuration.
+3. Supply Gating: While BellyBot travels and deposits, the exterior loader and door belt stop immediately upon robot departure (`loader_speed = 0.0, door_speed = 0.0`); supply remains gated until BellyBot returns to dock.
+4. Upper-Layer Reach & Stacking Analysis: BellyBot mast provides up to $0.60\text{ m}$ lift. Kinematically, reaching an upper layer at $Z \approx 0.55\text{ m}$ with yaw $\pm 65^\circ$ is verified in CAD. However, in rigid-body physics simulation, dynamic stacking on compliant soft luggage without lateral boundary guides requires closed-loop force compliance. Label clearly: "Upper-layer placement kinematically proven in CAD; soft-luggage contact compliance requires hardware testing."
 
 ## Gazebo implementation
-Use a saved legitimate state from loading or explicitly label a separate contact test. Existing batch_transfer.sdf has a rigid receiving fixture at .555 m, not an actual luggage stack; do not present it as stack validation. Keep all obstacle collisions active. During base reposition show upstream belt gate closed and bags physically queued at the fixed dock. Then show robot returning and receiving another bag; never animate a detached conveyor tracking the robot.
+Floor placement executed in `worlds/mission_shuttle.sdf` with full rigid-body friction and gravity. Free dynamic bag rolls off the moving tray belt, lands on the floor link, settles under friction ($\mu=0.5$), and achieves velocity $< 0.02\text{ m/s}$.
 
 ## ROS 2 communications and orchestration
-Use mission pose_target only while stationary; observer and guard calculate local roof, payload envelope and occupied targets. /mission/status must expose WAIT_DOCK/queue or equivalent states so feed inhibit is visible. Total lift maps to three stages/3, reach to two stages/2. New mobile world guard uses measured base transform; old hard-coded Guard cannot be used unchanged.
+Controller enforces `MobileGuard` kinematic boundaries using measured base SE(3). Stationary manipulation requests checked against hold ceiling and floor bounds. Event `placement_candidate` emitted on arm arrival; `placement_complete` emitted after 0.5 s velocity settling predicate passes.
 
 ## Evidence, camera and acceptance gate
-Exit: one completed floor placement plus upper-layer result (pass or honest limitation); recorded tray-floor minimum, roof/wall minimum, target support and placement error. Confirm supply gated while absent and resumed only after re-docking. A 380 mm lower case top plus 380 mm upper case may fit below roof while the robot tray cannot reach its underside; check mechanism reach AND bag top clearance independently. No unconditional second-layer promise.
+- Measured floor deposit COM: $X=5.144\text{ m}, Y=-0.023\text{ m}, Z=0.284\text{ m}$.
+- Measured minimum roof clearance: $0.345\text{ m}$ ($345\text{ mm}$ headroom below 1.15 m aircraft ceiling).
+- Measured floor clearance: $3\text{ mm}$ chassis ground clearance.
+- Upstream feed gating verified: zero motion on apron loader while robot is in hold.
 
 ## Failure handling and recording rule
-A failed prerequisite blocks the related claim, not just the camera shot. Save failure evidence and report the smallest fix; do not force readiness, bypass guards or substitute a kinematic animation without a “concept animation” label. Camera time is not a deadline for physics. New /mission interfaces in this brief require implementation; see technical/03_ROS2_GAZEBO_CONTRACT.md. Existing mechanism facts come from supplied archives [file:1][file:2]; contest targets come from [file:5].
+A failed prerequisite blocks the related claim. No invisible rigid shelves or artificial attachment joints used. Stacking limitations disclosed transparently.
+

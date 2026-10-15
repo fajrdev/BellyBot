@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <model name="mission_door_belt">
+    <static>false</static>
+    <link name="door_belt_frame">
+      <pose relative_to="__model__">1.3 -1.599 0.099 0 -0.0956 1.570796327</pose>
+      <inertial>
+        <mass>38</mass>
+        <inertia>
+          <ixx>11.485354333333333</ixx>
+          <iyy>22.414075166666667</iyy>
+          <izz>13.900479166666665</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <pose>0 0 -0.5565 0 0 0</pose>
+      </inertial>
+      <visual name="door_belt_frame_visual">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/door_belt_frame.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="frame-1">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/collision_door_belt_frame_frame-1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="guide-1">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/collision_door_belt_frame_guide-1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="frame1">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/collision_door_belt_frame_frame1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="guide1">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/collision_door_belt_frame_guide1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="ground_leg-1">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/collision_door_belt_frame_ground_leg-1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+      <collision name="ground_leg1">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/collision_door_belt_frame_ground_leg1.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+    </link>
+    <joint name="door_belt_frame_anchor" type="fixed">
+      <parent>world</parent>
+      <child>door_belt_frame</child>
+    </joint>
+    <link name="door_belt_contact">
+      <pose relative_to="door_belt_frame">0 0 0 0 0 0</pose>
+      <inertial>
+        <mass>1</mass>
+        <inertia>
+          <ixx>0.030033333333333332</ixx>
+          <iyy>0.32607366666666665</iyy>
+          <izz>0.35604033333333335</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <pose>0 0 0.2974 0 0 0</pose>
+      </inertial>
+      <visual name="door_belt_contact_visual">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/door_belt_contact.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <collision name="contact">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/collision_door_belt_contact_contact.stl</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>0.6</mu>
+              <mu2>0.6</mu2>
+            </ode>
+          </friction>
+          <bounce>
+            <restitution_coefficient>0.04</restitution_coefficient>
+            <threshold>0.1</threshold>
+          </bounce>
+        </surface>
+      </collision>
+    </link>
+    <link name="door_belt_contact_rear">
+      <pose relative_to="door_belt_frame">-0.977 0 0.286 0 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.018836166666666664</ixx>
+          <iyy>4.033333333333339e-05</iyy>
+          <izz>0.018836166666666664</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <pose>0 0 0 0 0 0</pose>
+      </inertial>
+      <visual name="door_belt_contact_rear_visual">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/door_belt_contact_rear.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="door_belt_contact_front">
+      <pose relative_to="door_belt_frame">0.977 0 0.286 0 0 0</pose>
+      <inertial>
+        <mass>0.5</mass>
+        <inertia>
+          <ixx>0.018836166666666664</ixx>
+          <iyy>4.033333333333339e-05</iyy>
+          <izz>0.018836166666666664</izz>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyz>0</iyz>
+        </inertia>
+        <pose>0 0 0 0 0 0</pose>
+      </inertial>
+      <visual name="door_belt_contact_front_visual">
+        <geometry>
+          <mesh>
+            <uri>model://door_belt/meshes/door_belt_contact_front.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="door_belt_contact_joint" type="fixed">
+      <parent>door_belt_frame</parent>
+      <child>door_belt_contact</child>
+      <pose relative_to="door_belt_contact">0 0 0 0 0 0</pose>
+    </joint>
+    <joint name="door_belt_contact_rear_joint" type="revolute">
+      <parent>door_belt_frame</parent>
+      <child>door_belt_contact_rear</child>
+      <pose relative_to="door_belt_contact_rear">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>120</effort>
+          <velocity>120</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.3</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <joint name="door_belt_contact_front_joint" type="revolute">
+      <parent>door_belt_frame</parent>
+      <child>door_belt_contact_front</child>
+      <pose relative_to="door_belt_contact_front">0 0 0 0 0 0</pose>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+          <effort>120</effort>
+          <velocity>120</velocity>
+        </limit>
+        <dynamics>
+          <damping>0.3</damping>
+        </dynamics>
+      </axis>
+    </joint>
+    <plugin filename="gz-sim-track-controller-system" name="gz::sim::systems::TrackController">
+      <link>door_belt_contact</link>
+      <velocity_topic>/environment/door_belt_contact/speed</velocity_topic>
+      <track_orientation>0 3.141592653589793 0</track_orientation>
+      <max_command_age>0.35</max_command_age>
+      <min_velocity>-1.2</min_velocity>
+      <max_velocity>1.2</max_velocity>
+      <min_acceleration>-1.2</min_acceleration>
+      <max_acceleration>1.2</max_acceleration>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
+      <joint_name>door_belt_contact_rear_joint</joint_name>
+      <topic>/environment/door_belt_contact/roller_speed</topic>
+      <use_force_commands>false</use_force_commands>
+    </plugin>
+    <plugin filename="gz-sim-joint-controller-system" name="gz::sim::systems::JointController">
+      <joint_name>door_belt_contact_front_joint</joint_name>
+      <topic>/environment/door_belt_contact/roller_speed</topic>
+      <use_force_commands>false</use_force_commands>
+    </plugin>
+    <plugin filename="gz-sim-joint-state-publisher-system" name="gz::sim::systems::JointStatePublisher">
+      <topic>/model/door_belt/joint_states</topic>
+    </plugin>
+  </model>
+</sdf>

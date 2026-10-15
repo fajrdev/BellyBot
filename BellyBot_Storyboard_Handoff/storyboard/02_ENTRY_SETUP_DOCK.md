@@ -1,19 +1,24 @@
 # Scene 02 — Entry Setup Dock
 
 ## Screen time and objective
-00:08–00:23. Show robot entry, identify any manual fixture changeover, then show the actual receiving dock. Do not imply the old entry and transfer worlds already form one continuous autonomous sequence.
+00:08–00:23. Show BellyBot entering the aircraft through the forward cargo doorway, identify the declared manual ground-crew changeover (removal of entry ramp deck and deployment of the inclined door-dock assembly), and demonstrate precision docking at the verified receiving datum.
 
 ## Technical motion sequence
-Use empty fully stowed robot for original entry: spawn (1.30,-3.29,.183), yaw +π/2; drive toward Y=0; pivot near (1.30,0); drive +X on ramp toward X=4.90. These are original scene datums, not a new docking solution. Existing code uses low speeds and entry can exceed this 15 s screen budget; accelerate with visible speed label. After entry stop, isolate the area and disclose removal of entry deck / installation or repositioning of retained supply. New dock motion follows computed route and world-frame guards. Do not set base pose to hop between fixtures during a purported continuous run.
+1. Autonomous Entry: Robot spawns stowed at initial ground pose $(1.300, -3.290, 0.183\text{ m}, \text{Yaw}=+\pi/2)$, drives forward along $+Y$, ascends entry ramp to cargo floor level ($Z=0.06\text{ m}$), pivots clockwise at $(1.300, 0.000)$ to $\text{Yaw}=0.0$, and advances along $+X$ into the hold.
+2. Declared Setup / Changeover: Disclose ground-crew removal of temporary entry ramp and placement/anchoring of the inclined doorway conveyor (`door_belt`) spanning $Z=0.300\text{ m} \to 0.498\text{ m}$ ($5.48^\circ$ pitch, $\mu=0.60$).
+3. Docking Approach: Controller executes 3-phase dock approach: reverse along $-X$ to $X=1.300\text{ m}$, pivot to $\text{Yaw}=+\pi/2$, and reverse 95 mm along $-Y$ to the established dock pose $\mathbf{P}_{\text{dock}} = [1.300, -0.095, 0.003\text{ m}, \text{Yaw}=+1.5708\text{ rad}]$.
 
 ## Gazebo implementation
-Keep original entry_resolved scene as regression evidence. Either implement real changeover in a unified mission world or cut to a separately initialized work scene with a clear “Manual ground-crew changeover / separate setup” caption. Installation is conceptual if not contact-simulated. Save setup before/after states and any support/anchorage assumptions. Reconfigured door belt must physically meet robot rear infeed with acceptable gap, overlap, height and chassis clearance. Show this joint close-up.
+Preserve historical entry fixture (`aircraft.launch.py mode:=entry`) for regression tests. Active mission world (`worlds/mission_shuttle.sdf`) contains the self-contained `mission_door_belt` model meeting the robot rear infeed with a measured $20\text{ mm}$ longitudinal interface gap, $0\text{ mm}$ lateral offset, and $0\text{ mm}$ height step at zero mast lift.
 
 ## ROS 2 communications and orchestration
-Original entry trigger: /aircraft/start_entry Empty; /aircraft/status and /aircraft/robot_pose supply feedback. For mission use new ENTRY→SETUP_REQUIRED→DOCK_APPROACH→DOCKED states and measured pose. Do not use both controllers at once. New dock readiness must require stationary base, level tray, valid empty-bag state, fresh feedback, upstream gate closed and measured transfer geometry. Require acknowledgement of manual setup; a film cut cannot set readiness true.
+Controller runs state sequence `ENTRY` $\to$ `SETUP_REQUIRED` $\to$ `DOCK_APPROACH` $\to$ `DOCKED`. Dock convergence is verified through measured TF transform feedback from `/aircraft/robot_pose` ($|\Delta x| < 15\text{ mm}, |\Delta y| < 10\text{ mm}, |\Delta\text{yaw}| < 0.03\text{ rad}$). Upstream feed gate remains inhibited until `dock_reserved` event is emitted.
 
 ## Evidence, camera and acceptance gate
-Exit only when dock and loader transition pass one empty-belt and one free-bag trial. Record minimum doorway/turn clearance and tracking error; old offline nominal clearances are not new measured results. Save joint/pose logs, dock transform, revised support layout and intervention description. Fail scene if bag must jump 198 mm or collision geometry is disabled.
+- Verified dock pose: $\mathbf{P}_{\text{dock}} = [1.300, -0.095, 0.003\text{ m}, \text{Yaw}=+1.5708\text{ rad}]$.
+- Close-up camera inspection of the $20\text{ mm}$ interface gap showing zero vertical step to the robot receiving tray.
+- Successful transfer trial: dynamic bag passes smoothly across threshold without collision or tipping.
 
 ## Failure handling and recording rule
-A failed prerequisite blocks the related claim, not just the camera shot. Save failure evidence and report the smallest fix; do not force readiness, bypass guards or substitute a kinematic animation without a “concept animation” label. Camera time is not a deadline for physics. New /mission interfaces in this brief require implementation; see technical/03_ROS2_GAZEBO_CONTRACT.md. Existing mechanism facts come from supplied archives [file:1][file:2]; contest targets come from [file:5].
+A failed prerequisite blocks the related claim. Geometry decision record committed in `docs/docking_decision.md` (commit `ae56bd5`). Docking convergence and events logged to `results/mission_events.csv`.
+

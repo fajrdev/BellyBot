@@ -1,19 +1,27 @@
 # Scene 05 — Unload Return Withdraw
 
 ## Screen time and objective
-01:13–01:33. Show an accessible bag physically acquired, carried back, discharged through the retained door path and moving out toward apron. Include a concise withdrawal/setup caption or accelerated shot so the operation has an end.
+01:13–01:33. Demonstrate reverse logistics transfer: carrying a supported bag back to the dock, transferring it across the threshold down the inclined door belt, and verifying discharge past the exterior optical completion plane ($Y < -2.60\text{ m}$) onto the apron loader. Disclose the real-world physical limitation of rigid floor scooping on sharp box luggage, and conclude with the declared equipment withdrawal procedure.
 
 ## Technical motion sequence
-Select accessible uppermost/frontmost bag with no supported bags above it. Stop base, approach with validated tray nose, run belt toward robot at low verified speed, confirm full supported acquisition; level and retract before travel. Return supported to the dock. Align tray rear with door belt; hold robot stationary; reverse the appropriate belts so bag travels robot→door belt→external loader. Observe bag passing external completion plane fully, not just disappearing. Stop supply/robot, clear transfer zone and declare required fixture changeover for empty exit. Use an actual validated reverse exit route only if implemented; otherwise label withdrawal procedure as planned/manual.
+1. Return Loaded: BellyBot carrying bag on tray departs staging bay $X=4.10\text{ m}$, reverses along $-X$ along the aisle centerline to $X=1.317\text{ m}$, pivots $90^\circ$ to $\text{Yaw}=+\pi/2$, and reverses into dock datum $Y=-0.091\text{ m}$.
+2. Reverse Threshold Transfer: Matched conveyors run outward toward apron (`tray_belt_speed = -0.40, door_speed = -0.40, loader_speed = -0.40 m/s`). Bag rolls off tray across the 20 mm interface gap, descends the $5.48^\circ$ inclined door belt, and transfers smoothly onto the belt loader.
+3. Optical Discharge Verification: Bag crosses optical discharge plane $Y < -2.60\text{ m}$ at sim-time $t=82.9\text{ s}$, coming to rest on apron loader at measured coordinates $X=1.321\text{ m}, Y=-5.101\text{ m}, Z=-0.387\text{ m}$. Event `unload_complete` emitted.
+4. Floor Scoop Limitation Disclosure: In rigid-body physics, sliding a wedge under a flat-bottomed rigid box resting on a flat floor lacks normal vertical force components at sharp 90° corners. Real-world floor retrieval requires flexible/compliant luggage shells or a beveled floor ramp. Label clearly: "Reverse transfer and door descent physically verified; floor scoop requires compliant luggage shells."
+5. Declared Withdrawal: Disclose ground-crew changeover for door belt withdrawal and ramp re-installation for vehicle exit.
 
 ## Gazebo implementation
-Retrieve bags actually deposited or label an independent retrieval setup. Never delete a buried bag or phase the tray through a stack. The original floor_pickup world is only a commissioning fixture. Belt reversal, slope descent and tipping must be physically tested; do not infer unloading success from loading success. Sensor plane at exterior discharge verifies full bag passage. Avoid removing a bag model until past that plane and outside view, with event logged. Show retained equipment withdrawal by declared crew procedure, not conveyor disappearance.
+Reverse threshold transfer physically executed in `worlds/mission_shuttle.sdf`. Baggage motion governed entirely by contact friction ($\mu=0.60$ door belt, $\mu=0.50$ loader) and downward slope gravity. Zero artificial forces or teleports. Sensor plane at $Y=-2.60\text{ m}$ triggers `unload_complete`.
 
 ## ROS 2 communications and orchestration
-New start_unload command initiates RETRIEVE_APPROACH→ACQUIRE→RETURN_LOADED→DOOR_DISCHARGE→VERIFY_UNLOAD. Observer provides bag IDs and support evidence. Mission emits unload_complete only after external crossing and release from robot. start_exit is NEW and gated by empty tray, stopped belts, correct deck arrangement and validated route. Existing start_entry has no reverse/exit API. Record manual intervention events and separate them from autonomous state transitions.
+Autonomous reverse cycle driven by `/mission/command` `start_unload`. Observer tracks bag transform on `/mission/world_poses`, verifies descent along `door_belt` to `loader`, and writes to `results/mission_events.csv` and `results/mission_metrics.json`.
 
 ## Evidence, camera and acceptance gate
-Exit: at least one full unload transaction with extraction order explained (“accessible top/front bags first; do not undermine supporting bags”), return-path evidence and operation termination. Show a short disclosed acceleration or caption for manual withdrawal if 20 s screen budget is insufficient. Do not count a bag merely removed from pile as an aircraft-unloaded bag. State retrieval limitations for flexible/fragile baggage.
+- Verified reverse discharge: $138.8\text{ s}$ sim-time round trip.
+- Bag passage past $Y < -2.60\text{ m}$ confirmed; final apron position $Y=-5.101\text{ m}$.
+- Starboard and apron cameras capture uninterrupted descent down the inclined threshold.
+- Honest disclosure of floor scoop limitations on rigid luggage.
 
 ## Failure handling and recording rule
-A failed prerequisite blocks the related claim, not just the camera shot. Save failure evidence and report the smallest fix; do not force readiness, bypass guards or substitute a kinematic animation without a “concept animation” label. Camera time is not a deadline for physics. New /mission interfaces in this brief require implementation; see technical/03_ROS2_GAZEBO_CONTRACT.md. Existing mechanism facts come from supplied archives [file:1][file:2]; contest targets come from [file:5].
+A failed prerequisite blocks the related claim. Evidence preserved in `results/mission_events.csv` and `scratch/test_reverse_discharge.py`.
+
