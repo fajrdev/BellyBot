@@ -1,0 +1,123 @@
+{
+  "investigation_date": "2026-10-15",
+  "camera_match": {
+    "reference_clean": "BellyBot_Storyboard_Handoff/references/reference_2.jpeg",
+    "reference_marked": "BellyBot_Storyboard_Handoff/references/reference_1.jpeg",
+    "camera_source": "videos/_work/idea/zoom_D9_fov65.png",
+    "camera_params": {
+      "elevation_deg": 35.0,
+      "azimuth_deg": -67.0,
+      "target_center": [
+        2.95,
+        -0.75,
+        0.45
+      ],
+      "distance_m": 9.0,
+      "hfov_rad": 0.65,
+      "resolution": [
+        1280,
+        720
+      ]
+    }
+  },
+  "retained_models": [
+    {
+      "model_name": "belt_loader",
+      "role": "External apron baggage delivery conveyor",
+      "location": "Outside aircraft hold, apron side (Y < -2.6 m)",
+      "action": "RETAIN in mission variant"
+    },
+    {
+      "model_name": "door_belt",
+      "role": "Retained doorway feed conveyor",
+      "location": "Doorway sill / hold boundary (X=1.30 m, Y=-2.588 m to -0.512 m, Z_surf=0.300 m)",
+      "links": [
+        "door_belt_frame",
+        "door_belt_contact",
+        "door_belt_rear",
+        "door_belt_front"
+      ],
+      "action": "RETAIN in mission variant; re-height and reposition for direct robot dock"
+    },
+    {
+      "model_name": "bellybot_dock_stack",
+      "role": "Mobile baggage handling robot",
+      "location": "Aft cargo hold aisle",
+      "action": "RETAIN completely (tracks, mast, yaw, reach, tray pitch, tray belt)"
+    }
+  ],
+  "removed_models": [
+    {
+      "model_name": "corner_transfer",
+      "role": "Interior 90-degree rotary elevating transfer deck",
+      "world_path": "model://corner_transfer",
+      "center": [
+        1.3,
+        0.0,
+        0.25
+      ],
+      "links": [
+        "corner_base",
+        "corner_stage_1",
+        "corner_stage_2",
+        "corner_stage_3",
+        "corner_rotor",
+        "corner_belt",
+        "corner_belt_rear",
+        "corner_belt_front"
+      ],
+      "joints": [
+        "corner_base_anchor",
+        "corner_stage_1_joint",
+        "corner_stage_2_joint",
+        "corner_stage_3_joint",
+        "corner_rotor_joint",
+        "corner_belt_rear_joint",
+        "corner_belt_front_joint"
+      ],
+      "mark_in_reference": "Left-hand circular/oval red mark circling the rotary deck and telescoping vertical legs"
+    },
+    {
+      "model_name": "longitudinal_buffer",
+      "role": "Interior horizontal buffer conveyor with folding bridge",
+      "world_path": "model://longitudinal_buffer",
+      "center": [
+        2.7,
+        0.0,
+        0.37
+      ],
+      "links": [
+        "buffer_base",
+        "buffer_stage_1",
+        "buffer_stage_2",
+        "buffer_belt",
+        "buffer_belt_rear",
+        "buffer_belt_front",
+        "buffer_bridge",
+        "bridge_roller_0",
+        "bridge_roller_1",
+        "bridge_roller_2",
+        "bridge_roller_3",
+        "bridge_roller_4",
+        "bridge_roller_5",
+        "bridge_roller_6"
+      ],
+      "joints": [
+        "buffer_base_anchor",
+        "buffer_stage_1_joint",
+        "buffer_stage_2_joint",
+        "buffer_belt_rear_joint",
+        "buffer_belt_front_joint",
+        "buffer_bridge_joint",
+        "bridge_roller_0_joint",
+        "bridge_roller_1_joint",
+        "bridge_roller_2_joint",
+        "bridge_roller_3_joint",
+        "bridge_roller_4_joint",
+        "bridge_roller_5_joint",
+        "bridge_roller_6_joint"
+      ],
+      "mark_in_reference": "Right-hand elongated diagonal red stroke along the longitudinal buffer conveyor and its folding bridge"
+    }
+  ]
+}
