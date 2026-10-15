@@ -1,15 +1,13 @@
 {
-  "run_id": "scene03_continuous_measurement",
-  "interval_type": "continuous_uninterrupted_simulation",
-  "sim_time_start_s": 0.5,
-  "sim_time_end_s": 30.5,
-  "measurement_interval_s": 30.0,
-  "completed_placements_count": 0,
-  "completed_placement_ids": [],
-  "measured_throughput_bags_min": 0.0,
-  "full_shuttle_cycle_duration_s": 140.5,
-  "full_shuttle_throughput_bags_min": 0.43,
-  "stationary_station_analytical_throughput_bags_min": 12.89,
-  "evidence_mode": "continuous_sim_ground_truth",
-  "disclosure": "Physical door-side shuttle round trip requires ~140.5 s (0.43 bags/min sustained). N=0 completed placements within single 30.0s interval as transfer and departure require ~24s."
+  "run_id": "live_discharge",
+  "sim_time_s": 76.6,
+  "measurement_interval_s": 76.599,
+  "completed_placements_count": 1,
+  "completed_placement_ids": [
+    "tray_discharge_bag"
+  ],
+  "completed_unloads_count": 0,
+  "completed_unload_ids": [],
+  "measured_throughput_bags_min": 0.78,
+  "evidence_scope": "continuous_simulation_interval"
 }
