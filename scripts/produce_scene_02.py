@@ -157,9 +157,9 @@ def main():
     cut3_frames = []
     for i in range(180):
         if i < 110:
-            f_idx = int(i * (118.0 / 110.0))
+            f_idx = int(i * (134.0 / 110.0))
         else:
-            f_idx = 118  # Dwell dead-center on robot receiving conveyor
+            f_idx = 134  # Dwell completely on robot receiving conveyor
         cap_dock.set(cv2.CAP_PROP_POS_FRAMES, f_idx)
         ret, frame = cap_dock.read()
         if not ret or frame is None:
