@@ -34,3 +34,9 @@ results/*.tmp
 archives/*.zip
 videos/
 .commandcode/
+_bloat_stash/
+
+# Nested ROS build artifacts
+**/build/
+**/install/
+**/log/

@@ -30,7 +30,11 @@ def setup(context):
         os.environ.get('GZ_SIM_RESOURCE_PATH', '')
     ])
 
-    world_sdf = str(p / 'worlds/mission_shuttle.sdf')
+    world_arg = LaunchConfiguration('world').perform(context)
+    if world_arg:
+        world_sdf = world_arg
+    else:
+        world_sdf = str(p / 'worlds/mission_shuttle.sdf')
     gz_args = ['gz', 'sim', '-v', '3']
     if headless:
         gz_args.extend(['-s', '--headless-rendering'])
@@ -71,6 +75,7 @@ def setup(context):
 
 def generate_launch_description():
     return LaunchDescription([
+        DeclareLaunchArgument('world', default_value=''),
         DeclareLaunchArgument('bag_height', default_value='0.38'),
         DeclareLaunchArgument('bag_mass', default_value='32.0'),
         DeclareLaunchArgument('headless', default_value='false'),

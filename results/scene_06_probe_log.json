@@ -1,0 +1,12 @@
+{
+  "scene": "Scene 06 \u2014 Stop Recovery",
+  "screen_time": "01:33 - 01:48 (15.0s)",
+  "frames_recorded": 450,
+  "measured_command_latency_ms": 3.62,
+  "measured_stopping_distance_mm": 6.6,
+  "measured_stopping_duration_s": 0.5,
+  "false_reset_immunity_verified": true,
+  "command_rejection_verified": true,
+  "supervised_reset_verified": true,
+  "final_state": "IDLE"
+}

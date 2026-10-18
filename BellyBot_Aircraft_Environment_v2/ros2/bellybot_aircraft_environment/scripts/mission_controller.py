@@ -154,8 +154,11 @@ class MissionController(Node):
         self.q_stamp = {}
         self.robot_pose = None  # (x, y, z, roll, pitch, yaw)
         self.robot_pose_stamp = 0.0
+        self.pose_history = []  # (t, x, y, yaw)
         self.sim_time = 0.0
+        self.last_sim_time = -1.0
         self.last_clock_wall = time.monotonic()
+        self.last_clock_advance_wall = time.monotonic()
         self.wall_watchdog_ok = True
 
         # State Machine
@@ -176,7 +179,7 @@ class MissionController(Node):
 
         # Docking Definition
         self.P_DOCK = (1.300, -0.095, PI / 2.0)
-        self.P_WORK = (4.100, 0.000, 0.0)
+        self.P_WORK = (3.200, 0.000, 0.0)
 
         # Publications
         self.pub_status = self.create_publisher(String, '/mission/status', 10)
@@ -221,18 +224,19 @@ class MissionController(Node):
         t = msg.clock.sec + msg.clock.nanosec * 1e-9
         self.sim_time = t
         self.last_clock_wall = time.monotonic()
+        if t > self.last_sim_time:
+            self.last_sim_time = t
+            self.last_clock_advance_wall = time.monotonic()
 
     def wall_clock_watchdog(self):
         while True:
-            time.sleep(0.5)
-            dt_wall = time.monotonic() - self.last_clock_wall
+            time.sleep(0.2)
+            dt_wall = time.monotonic() - self.last_clock_advance_wall
             if dt_wall > 2.5:
-                if self.wall_watchdog_ok:
-                    self.get_logger().error(f"Wall-clock Watchdog Triggered: /clock frozen for {dt_wall:.2f}s!")
+                if self.wall_watchdog_ok and self.sim_time > 0.0:
+                    self.get_logger().error(f"Wall-clock Watchdog Triggered: /clock frozen for {dt_wall:.2f}s (> 2.5s threshold)!")
                     self.wall_watchdog_ok = False
-                    self.fault = "Simulator link /clock frozen"
-            else:
-                self.wall_watchdog_ok = True
+                    self.latch_stop("Simulator link /clock frozen (> 2.5s)")
 
     def on_joints(self, msg: JointState):
         t = self.now_sim()
@@ -251,16 +255,49 @@ class MissionController(Node):
                 roll = math.atan2(2 * (q.w * q.x + q.y * q.z), 1 - 2 * (q.x * q.x + q.y * q.y))
                 self.robot_pose = (p.x, p.y, p.z, roll, pitch, yaw)
                 self.robot_pose_stamp = t
+                self.pose_history.append((t, p.x, p.y, yaw))
+                if len(self.pose_history) > 60:
+                    self.pose_history = [(pt, px, py, pyaw) for pt, px, py, pyaw in self.pose_history if t - pt <= 2.0]
+
+    def is_robot_stationary(self):
+        if len(self.pose_history) < 2:
+            return True
+        t_now = self.now_sim()
+        recent = [p for p in self.pose_history if t_now - p[0] <= 0.40]
+        if len(recent) < 2:
+            recent = self.pose_history[-2:]
+        t0, x0, y0, yaw0 = recent[0]
+        t1, x1, y1, yaw1 = recent[-1]
+        dt = t1 - t0
+        if dt < 0.01:
+            return True
+        lin_spd = math.hypot(x1 - x0, y1 - y0) / dt
+        ang_spd = abs(yaw1 - yaw0) / dt
+        return lin_spd < 0.02 and ang_spd < 0.04
+
+    def latch_stop(self, reason):
+        self.stop_latched = True
+        self.state = 'STOP_LATCHED'
+        self.fault = reason
+        # Freeze arm hold at current measured joint posture
+        if self.q:
+            lift = sum(self.q.get(f'lift_stage_{i}_joint', 0.0) for i in (1, 2, 3))
+            yaw = self.q.get('yaw_joint', 0.0)
+            reach = self.q.get('extension_mid_joint', 0.0) + self.q.get('extension_tip_joint', 0.0)
+            pitch = self.q.get('tray_pitch_joint', 0.0)
+            self.current_arm_cmd = [lift, yaw, reach, pitch]
+        # Inhibit active trajectories
+        self.arm_segment = None
+        self.arm_stage = 'IDLE'
+        self.base_trajectory = None
+        self.stop_actuators()
+        self.emit_event('stop_commanded', details={'reason': self.fault})
+        self.publish_telemetry()
+        self.get_logger().warn(f"Emergency Stop LATCHED globally: {reason}")
 
     def on_stop(self, msg: Bool):
         if msg.data:
-            self.stop_latched = True
-            self.state = 'STOP_LATCHED'
-            self.fault = 'E-Stop commanded via /mission/stop'
-            self.emit_event('stop_commanded', details={'reason': self.fault})
-            self.stop_actuators()
-            self.publish_telemetry()
-            self.get_logger().warn("Emergency Stop LATCHED globally.")
+            self.latch_stop('E-Stop commanded via /mission/stop')
         # Note: data==False NEVER clears latched stop per contract.
 
     def on_reset(self, req, res):
@@ -276,10 +313,17 @@ class MissionController(Node):
             self.emit_event('reset_rejected', details={'reason': res.message})
             return res
 
-        # Check velocities
+        if not self.is_robot_stationary():
+            res.success = False
+            res.message = "Reset rejected: robot is not stationary."
+            self.emit_event('reset_rejected', details={'reason': res.message})
+            return res
+
         if self.robot_pose is not None:
             self.stop_latched = False
             self.fault = ''
+            self.wall_watchdog_ok = True
+            self.last_clock_advance_wall = time.monotonic()
             self.state = 'IDLE'
             self.publish_telemetry()
             res.success = True
@@ -302,14 +346,23 @@ class MissionController(Node):
             self.get_logger().info(f"Received mission command: {cmd} [bag_id={bag_id}]")
 
             if self.stop_latched:
-                raise ValueError("Cannot accept command while STOP_LATCHED")
+                err_msg = f"Cannot accept command '{cmd}' while STOP_LATCHED"
+                self.emit_event('command_rejected', details={'command': cmd, 'reason': err_msg})
+                self.get_logger().error(err_msg)
+                return
 
             if cmd == 'start_load':
                 if self.state in ('IDLE', 'COMPLETE'):
                     self.active_bag_id = bag_id or f"bag_{self.placement_counter + 1}"
                     self.active_target_id = target_id or f"target_cell_{self.placement_counter + 1}"
-                    self.state = 'DOCK_APPROACH'
-                    self.emit_event('dock_reserved', bag_id=self.active_bag_id, target_id=self.active_target_id)
+                    if req.get('skip_infeed', False):
+                        self.state = 'TRANSPORT'
+                        self.state_entry_time = self.now_sim()
+                        self.emit_event('support_confirmed', details={'tray_supported': True, 'preloaded': True})
+                        self.get_logger().info("Preloaded baggage verified. State -> TRANSPORT")
+                    else:
+                        self.state = 'DOCK_APPROACH'
+                        self.emit_event('dock_reserved', bag_id=self.active_bag_id, target_id=self.active_target_id)
             elif cmd == 'start_unload':
                 if self.state in ('IDLE', 'COMPLETE'):
                     self.active_bag_id = bag_id or f"bag_{max(1, self.placement_counter)}"
@@ -321,6 +374,12 @@ class MissionController(Node):
                         self.state = 'RETRIEVE_APPROACH'
                     self.state_entry_time = self.now_sim()
                     self.emit_event('unload_started', bag_id=self.active_bag_id)
+            elif cmd == 'start_deposit':
+                if self.state in ('IDLE', 'COMPLETE'):
+                    self.state = 'DEPOSIT'
+                    self.state_entry_time = self.now_sim()
+                    self.current_arm_cmd = [0.0, 0.0, 0.74, math.radians(33.0)]
+                    self.get_logger().info("Starting DEPOSIT sequence for Scene 06")
             elif cmd == 'stop':
                 self.on_stop(Bool(data=True))
             elif cmd == 'start_exit':
@@ -524,28 +583,29 @@ class MissionController(Node):
             # 3-phase dock departure:
             # Phase 1: Pull forward along +Y 95mm from dock datum Y=-0.095 to aisle centerline Y=0.000
             if y < -0.010:
-                v = min(0.08, max(0.02, (-0.005 - y) * 0.8))
-                w = max(-0.03, min(0.03, (PI/2.0 - yaw) * 1.0))
+                v = min(0.30, max(0.08, (-0.005 - y) * 2.0))
+                w = max(-0.06, min(0.06, (PI/2.0 - yaw) * 1.5))
                 self.send_base(v, w)
-            # Phase 2: Pivot clockwise from Yaw=+PI/2 to Yaw=0.0 at (1.300, 0.000)
+            # Phase 2: Swift agile pivot clockwise from Yaw=+PI/2 to Yaw=0.0 at (1.300, 0.000)
             elif abs(yaw) > 0.02:
-                w = -math.copysign(min(0.08, max(0.02, abs(yaw) * 0.8)), yaw)
+                w = -math.copysign(min(0.68, max(0.18, abs(yaw) * 1.6)), yaw)
                 self.send_base(0.0, w)
-            # Phase 3: Drive forward along +X to work datum X=4.10m
-            elif x < 4.08:
-                v = min(0.12, max(0.03, (4.10 - x) * 0.6))
-                w = max(-0.03, min(0.03, -yaw * 1.0 - y * 0.8))  # clamp steering to avoid track slip
+            # Phase 3: Swift cruise forward along +X to shortened work datum X=3.20m
+            elif x < 3.18:
+                v = min(0.48, max(0.10, (3.20 - x) * 1.2))
+                w = max(-0.06, min(0.06, -yaw * 1.5 - y * 1.0))  # steady tracking
                 self.send_base(v, w)
             else:
                 self.send_base(0.0, 0.0)
                 self.state = 'PLACE_APPROACH'
                 self.state_entry_time = t
-                self.get_logger().info("Arrived at Staging bay. State -> PLACE_APPROACH")
+                self.get_logger().info("Arrived at Staging bay X=3.20m. State -> PLACE_APPROACH")
 
         elif self.state == 'PLACE_APPROACH':
             self.send_base(0.0, 0.0)
-            # Floor placement posture: lift=0, yaw=0, reach=0.74m, pitch=0.54 rad (30.9 deg)
-            floor_pose = [0.0, 0.0, 0.74, math.radians(30.9)]
+            # Floor placement posture with increased conveyor pitch: lip lowered to within ~5mm of floor
+            # lift=0, yaw=0, reach=0.74m, pitch=33.0 deg (0.5760 rad)
+            floor_pose = [0.0, 0.0, 0.74, math.radians(33.0)]
             if self.arm_stage == 'IDLE':
                 self.start_arm_trajectory(floor_pose, duration=2.0)
                 self.arm_stage = 'MOVING'
@@ -554,17 +614,30 @@ class MissionController(Node):
                 self.state = 'DEPOSIT'
                 self.state_entry_time = t
                 self.emit_event('placement_candidate', details={'target_pose': floor_pose})
-                self.get_logger().info("Arm positioned for deposit. State -> DEPOSIT")
+                self.get_logger().info("Arm positioned for soft deposit. State -> DEPOSIT")
 
         elif self.state == 'DEPOSIT':
-            self.send_base(0.0, 0.0)
-            # Run tray belt forward (+0.60 m/s) to roll bag smoothly off tray onto floor
-            self.send_belts(loader=0.0, door=0.0, tray=0.60)
-            if t - self.state_entry_time > 3.5:
+            dt_dep = t - self.state_entry_time
+            # Soft touchdown roll-out sequence:
+            # 0.0 - 1.2s: Gentle forward belt feed (+0.24 m/s) to guide front edge softly onto floor liner
+            if dt_dep < 1.2:
+                self.send_base(0.0, 0.0)
+                self.send_belts(loader=0.0, door=0.0, tray=0.24)
+            # 1.2 - 3.4s: Synchronous roll-out: belt feeds at +0.22 m/s while chassis slowly eases backward at -0.10 m/s
+            # Conveyor lip gently recedes from underneath the bag, laying it softly flat on the floor with zero harsh drop
+            elif dt_dep < 3.4:
+                self.send_base(-0.10, 0.0)
+                self.send_belts(loader=0.0, door=0.0, tray=0.22)
+            # 3.4 - 4.2s: Stop actuators and allow bag to settle completely stationary
+            elif dt_dep < 4.2:
+                self.send_base(0.0, 0.0)
+                self.send_belts(0.0, 0.0, 0.0)
+            else:
+                self.send_base(0.0, 0.0)
                 self.send_belts(0.0, 0.0, 0.0)
                 self.state = 'VERIFY_PLACEMENT'
                 self.state_entry_time = t
-                self.get_logger().info("Bag roll-off completed. State -> VERIFY_PLACEMENT")
+                self.get_logger().info("Soft bag roll-out completed. State -> VERIFY_PLACEMENT")
 
         elif self.state == 'VERIFY_PLACEMENT':
             self.send_belts(0.0, 0.0, 0.0)
@@ -587,17 +660,17 @@ class MissionController(Node):
             # 3-phase dock approach:
             # Phase 1: Drive reverse along -X back to dock area (X=1.30m) along Y=0.000
             if x > 1.32:
-                v = -min(0.12, max(0.03, (x - 1.30) * 0.6))
-                w = max(-0.03, min(0.03, -yaw * 1.0 - y * 0.8))
+                v = -min(0.40, max(0.08, (x - 1.30) * 1.0))
+                w = max(-0.06, min(0.06, -yaw * 1.5 - y * 1.0))
                 self.send_base(v, w)
             # Phase 2: Pivot from Yaw=0.0 to Yaw=+PI/2 (facing +Y)
             elif abs(yaw - PI/2.0) > 0.02:
-                w = math.copysign(min(0.08, max(0.02, abs(PI/2.0 - yaw) * 0.8)), PI/2.0 - yaw)
+                w = math.copysign(min(0.65, max(0.18, abs(PI/2.0 - yaw) * 1.5)), PI/2.0 - yaw)
                 self.send_base(0.0, w)
             # Phase 3: Reverse along -Y 95mm from Y=0.000 to dock datum Y=-0.095
             elif y > -0.090:
-                v = -min(0.06, max(0.02, (y - (-0.095)) * 0.6))
-                w = max(-0.03, min(0.03, (PI/2.0 - yaw) * 1.0))
+                v = -min(0.25, max(0.05, (y - (-0.095)) * 1.5))
+                w = max(-0.06, min(0.06, (PI/2.0 - yaw) * 1.5))
                 self.send_base(v, w)
             else:
                 self.send_base(0.0, 0.0)

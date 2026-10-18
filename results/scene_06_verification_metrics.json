@@ -1,0 +1,53 @@
+{
+  "scene": "Scene 06 \u2014 Stop Recovery",
+  "timestamp": "2026-10-18T08:35:00Z",
+  "categories": {
+    "1_pre_stop_operation": {
+      "status": "PASS",
+      "max_vx_mps": 0.1,
+      "max_belt_mps": 0.24,
+      "initial_latched": false
+    },
+    "2_actuator_shutdown_latency": {
+      "status": "PASS",
+      "latency_ms": 3.62,
+      "stopping_distance_mm": 6.6,
+      "actuators_zeroed": true,
+      "stop_latched": true
+    },
+    "3_false_reset_immunity": {
+      "status": "PASS",
+      "immunity_latched": true,
+      "immunity_state": true
+    },
+    "4_command_rejection": {
+      "status": "PASS",
+      "command_rejected_event": true,
+      "remained_latched": true
+    },
+    "5_supervised_reset_recovery": {
+      "status": "PASS",
+      "reset_success": true,
+      "final_state": "IDLE",
+      "feedback_age_s": 0.007
+    },
+    "6_clock_watchdog": {
+      "status": "PASS",
+      "threshold_s": 2.5,
+      "watchdog_tested": true
+    },
+    "7_observer_audit_trail": {
+      "status": "PASS",
+      "has_stop_event": true,
+      "has_reset_event": true
+    },
+    "8_video_deliverables": {
+      "status": "PASS",
+      "hud_mp4": "/home/fajrda/sutd-hackathon/videos/segment_06_stop_and_recovery.mp4",
+      "pure_mp4": "/home/fajrda/sutd-hackathon/videos/scene_06_pure.mp4",
+      "frames": 450,
+      "duration_s": 15.0
+    }
+  },
+  "verdict": "PASS"
+}

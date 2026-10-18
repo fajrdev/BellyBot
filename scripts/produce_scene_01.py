@@ -24,7 +24,7 @@ import numpy as np
 REPO = Path("/home/fajrda/sutd-hackathon")
 WIDTH, HEIGHT = 1920, 1080
 FPS = 30.0
-DURATION = 8.0
+DURATION = 3.0
 TOTAL_FRAMES = int(DURATION * FPS)
 
 def draw_callout_card(canvas, anchor_pt, text_lines, box_pos, col_accent=(40, 180, 240)):
@@ -63,7 +63,9 @@ def draw_callout_card(canvas, anchor_pt, text_lines, box_pos, col_accent=(40, 18
                     cv2.FONT_HERSHEY_SIMPLEX, 0.46, col, thick, cv2.LINE_AA)
 
 def main():
-    raw_path = REPO / "scratch/scene01_precise_raw.png"
+    raw_path = REPO / "scratch/images/scene_01/scene01_precise_raw.png"
+    if not raw_path.exists():
+        raw_path = REPO / "scratch/scene01_precise_raw.png"
     if not raw_path.exists():
         raise FileNotFoundError(f"Missing base frame {raw_path}")
 
@@ -117,7 +119,7 @@ def main():
         cv2.polylines(canvas, [cell_poly], True, (120, 255, 120), 2, cv2.LINE_AA)
 
         # 2. Smooth animated traveling pulse along the physical route
-        pulse_pos = (t_sec * 0.5) % 1.0
+        pulse_pos = min(1.0, (t_sec / 3.0) * 1.05)
         n_segs = len(route_pts) - 1
         seg_idx = min(int(pulse_pos * n_segs), n_segs - 1)
         seg_frac = (pulse_pos * n_segs) - seg_idx
@@ -173,7 +175,7 @@ def main():
         mins = int(t_sec) // 60
         secs = int(t_sec) % 60
         tenth = int((t_sec - int(t_sec)) * 10)
-        time_str = f"VIDEO: 00:{secs:02d}.{tenth:01d} (SCENE 00:00 - 00:08)"
+        time_str = f"VIDEO: 00:{secs:02d}.{tenth:01d} (SCENE 00:00 - 00:03)"
         cv2.putText(canvas, time_str, (WIDTH - 460, 34),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.65, (255, 255, 255), 2, cv2.LINE_AA)
         cv2.putText(canvas, "VIEW: WIDE STARBOARD CUTAWAY", (WIDTH - 460, 58),

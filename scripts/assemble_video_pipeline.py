@@ -321,7 +321,7 @@ def build_segment_05():
     print(f"-> Saved {out_path} (20.0s, 600 frames)", flush=True)
 
 def build_segment_06():
-    """Segment 06: Safety, Emergency Stop & Supervised Recovery (15.0s, 450 frames)."""
+    """Segment 06: Safety, Emergency Stop & Supervised Recovery (10.0s, 300 frames)."""
     print("Building Segment 06 (Safety, Stop & Recovery)...", flush=True)
     out_path = OUT_DIR / "segment_06_stop_and_recovery.mp4"
     writer = cv2.VideoWriter(str(out_path), cv2.VideoWriter_fourcc(*"mp4v"), FPS, (WIDTH, HEIGHT))
@@ -329,8 +329,8 @@ def build_segment_06():
     cap_chase = load_clip(WORK_DIR / "cam_aisle_chase.mp4")
     cap_iso = load_clip(WORK_DIR / "cam_wide_iso.mp4")
 
-    cut1_frames = extract_frames(cap_chase, 800, 250, target_count=210)
-    cut2_frames = extract_frames(cap_iso, 400, 250, target_count=240)
+    cut1_frames = extract_frames(cap_chase, 800, 250, target_count=130)
+    cut2_frames = extract_frames(cap_iso, 400, 250, target_count=170)
 
     cap_chase.release()
     cap_iso.release()
@@ -343,14 +343,14 @@ def build_segment_06():
         "• /mission/reset Trigger service resets to IDLE under fresh feedback",
     ]
 
-    for i in range(450):
-        t_sec = 93.0 + (i / FPS)
-        if i < 210:
+    for i in range(300):
+        t_sec = 103.0 + (i / FPS)
+        if i < 130:
             frame = cut1_frames[i]
             view = "HOLD AISLE CHASE CAM"
-            stopped = i >= 60
+            stopped = i >= 40
             telem = {
-                "robot_x": 2.50 if stopped else 2.10 + 0.40 * (i / 60.0),
+                "robot_x": 2.50 if stopped else 2.10 + 0.40 * (i / 40.0),
                 "robot_y": -0.60, "robot_yaw_deg": 0.0,
                 "vx": 0.0 if stopped else +0.35,
                 "lift_mm": 100.0, "reach_mm": 0.0, "pitch_deg": 0.0,
@@ -359,9 +359,9 @@ def build_segment_06():
             }
             alert = ["E-STOP TRIPPED: STOP_LATCHED (<20ms)", "All actuators hardware-inhibited"] if stopped else None
         else:
-            frame = cut2_frames[i - 210]
+            frame = cut2_frames[i - 130]
             view = "STARBOARD CUTAWAY OVERVIEW"
-            reset_done = i >= 330
+            reset_done = i >= 210
             telem = {
                 "robot_x": 2.50, "robot_y": -0.60, "robot_yaw_deg": 0.0, "vx": 0.0,
                 "lift_mm": 100.0, "reach_mm": 0.0, "pitch_deg": 0.0,
@@ -376,16 +376,16 @@ def build_segment_06():
         writer.write(rendered)
 
     writer.release()
-    print(f"-> Saved {out_path} (15.0s, 450 frames)", flush=True)
+    print(f"-> Saved {out_path} (10.0s, 300 frames)", flush=True)
 
 def build_segment_07():
-    """Segment 07: Benchmark Results & Honest Engineering Disclosures (12.0s, 360 frames)."""
+    """Segment 07: Benchmark Results & Honest Engineering Disclosures (7.0s, 210 frames)."""
     print("Building Segment 07 (Benchmark Results & Disclosures)...", flush=True)
     out_path = OUT_DIR / "segment_07_measured_results.mp4"
     writer = cv2.VideoWriter(str(out_path), cv2.VideoWriter_fourcc(*"mp4v"), FPS, (WIDTH, HEIGHT))
 
     cap = load_clip(WORK_DIR / "cam_wide_iso.mp4")
-    raw_frames = extract_frames(cap, 50, 200, target_count=360)
+    raw_frames = extract_frames(cap, 50, 200, target_count=210)
     cap.release()
 
     scorecard_lines = [
@@ -400,7 +400,7 @@ def build_segment_07():
     ]
 
     for i, frame in enumerate(raw_frames):
-        t_sec = 108.0 + (i / FPS)
+        t_sec = 113.0 + (i / FPS)
         telem = {
             "robot_x": 1.30, "robot_y": -0.095, "robot_yaw_deg": 90.0, "vx": 0.0,
             "lift_mm": 100.0, "reach_mm": 0.0, "pitch_deg": 0.0,
@@ -414,7 +414,7 @@ def build_segment_07():
         writer.write(rendered)
 
     writer.release()
-    print(f"-> Saved {out_path} (12.0s, 360 frames)", flush=True)
+    print(f"-> Saved {out_path} (7.0s, 210 frames)", flush=True)
 
 def concat_master_video():
     print("=== Concatenating 7 Segments into Master Video ===", flush=True)

@@ -13,7 +13,7 @@ import os
 import subprocess
 from pathlib import Path
 
-REPO = Path("/home/fajrda/sutd-hackathon")
+REPO = Path(__file__).resolve().parent.parent
 WS_INSTALL = REPO / "ros2_ws" / "install" / "setup.bash"
 ROS_SETUP = Path("/opt/ros/jazzy/setup.bash")
 SCRATCH = Path(os.environ.get("COMMANDCODE_SCRATCHPAD", "/tmp"))

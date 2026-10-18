@@ -123,16 +123,21 @@ def draw_hud(frame, t_sec, cut_name, view_name, telem=None, banner=None, badge=N
 
 def main():
     entry_clip = REPO / "videos/_work/entry_live/cam_entry_deck.mp4"
-    dock_clip = REPO / "videos/_work/mission_live/cam_dock_close.mp4"
+    dock_clip = REPO / "videos/_work/dock_infeed/cam_dock_close.mp4"
 
     cap_entry = cv2.VideoCapture(str(entry_clip))
     cap_dock = cv2.VideoCapture(str(dock_clip))
 
     # Cut 2 high-res keyframes for ramp removal & door belt deployment
-    img_ramp = cv2.imread(str(REPO / "scratch/new_entry_f530.png"))
-    img_belt = cv2.imread(str(REPO / "scratch/cut2_deck_door_belt.png"))
+    p_ramp = REPO / "scratch/images/scene_02/new_entry_f530.png"
+    if not p_ramp.exists(): p_ramp = REPO / "scratch/new_entry_f530.png"
+    p_belt = REPO / "scratch/images/scene_02/cut2_deck_door_belt.png"
+    if not p_belt.exists(): p_belt = REPO / "scratch/cut2_deck_door_belt.png"
+
+    img_ramp = cv2.imread(str(p_ramp))
+    img_belt = cv2.imread(str(p_belt))
     if img_ramp is None or img_belt is None:
-        raise FileNotFoundError("Missing Cut 2 keyframe images in scratch/")
+        raise FileNotFoundError("Missing Cut 2 keyframe images in scratch/images/scene_02/")
 
     out_path = REPO / "videos/segment_02_entry.mp4"
     out_path.parent.mkdir(parents=True, exist_ok=True)
@@ -325,12 +330,14 @@ def main():
         writer.write(rendered)
 
         # Save review snapshot at Cut 1 end (f=149), Cut 2 mid (f=210), and Cut 3 end (f=400)
+        img_out_dir = REPO / "scratch/images/scene_02"
+        img_out_dir.mkdir(parents=True, exist_ok=True)
         if frame_idx == 149:
-            cv2.imwrite(str(REPO / "scratch/scene02_cut1_ingress_fixed.png"), rendered)
+            cv2.imwrite(str(img_out_dir / "scene02_cut1_ingress_fixed.png"), rendered)
         elif frame_idx == 210:
-            cv2.imwrite(str(REPO / "scratch/scene02_cut2_changeover_fixed.png"), rendered)
+            cv2.imwrite(str(img_out_dir / "scene02_cut2_changeover_fixed.png"), rendered)
         elif frame_idx == 400:
-            cv2.imwrite(str(REPO / "scratch/scene02_cut3_dock_fixed.png"), rendered)
+            cv2.imwrite(str(img_out_dir / "scene02_cut3_dock_fixed.png"), rendered)
 
     writer.release()
     print(f"-> Successfully rendered Scene 02: {out_path} ({TOTAL_FRAMES} frames, {DURATION:.1f}s)", flush=True)

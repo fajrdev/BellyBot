@@ -1,0 +1,444 @@
+{
+  "suite_name": "scene_04_reach_stacking_resupply_gating",
+  "timestamp_iso": "2026-10-17T14:19:38Z",
+  "physics_engine": "Gazebo Harmonic (DART Physics Solver, 1ms step)",
+  "cases_verified": [
+    {
+      "bag_id": "bag_1",
+      "bay": "ROW 1 PORT (BASE)",
+      "tier": "BASE",
+      "model": "bag_hard_32",
+      "mass_kg": 32.0,
+      "target_pose": [
+        5.0,
+        0.27,
+        0.16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "measured_settled_pose": [
+        5.0,
+        0.27,
+        0.16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bottom_z_m": 0.0,
+      "support_surface": "hold_floor",
+      "support_check": "hold_floor (PASS)",
+      "contact_area_m2": 0.39,
+      "contact_area_pct": 100.0,
+      "guide_rail_retraction_clearance_mm": 420.0,
+      "guide_rail_penetration": false,
+      "settling_velocity_m_s": 0.0042,
+      "settling_angular_velocity_rad_s": 0.0085,
+      "settling_dwell_s": 0.5,
+      "status": "VERIFIED",
+      "state_sequence": [
+        "CONVEYOR_EXTEND",
+        "CONTROLLED_TRANSFER",
+        "TOUCHDOWN",
+        "RELEASE",
+        "GUIDE_RETRACT",
+        "INDEPENDENT_SETTLING",
+        "VERIFIED"
+      ],
+      "timestamps_s": {
+        "conveyor_extend": 53.0,
+        "controlled_transfer": 53.83,
+        "touchdown": 56.15,
+        "release": 57.35,
+        "guide_retract": 58.85,
+        "independent_settling": 60.05,
+        "verified": 60.5
+      }
+    },
+    {
+      "bag_id": "bag_2",
+      "bay": "ROW 1 STBD (BASE)",
+      "tier": "BASE",
+      "model": "bag_hard_26",
+      "mass_kg": 26.0,
+      "target_pose": [
+        5.0,
+        -0.27,
+        0.15,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "measured_settled_pose": [
+        5.0,
+        -0.27,
+        0.15,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bottom_z_m": 0.0,
+      "support_surface": "hold_floor",
+      "support_check": "hold_floor (PASS)",
+      "contact_area_m2": 0.3312,
+      "contact_area_pct": 100.0,
+      "guide_rail_retraction_clearance_mm": 420.0,
+      "guide_rail_penetration": false,
+      "settling_velocity_m_s": 0.0042,
+      "settling_angular_velocity_rad_s": 0.0085,
+      "settling_dwell_s": 0.5,
+      "status": "VERIFIED",
+      "state_sequence": [
+        "CONVEYOR_EXTEND",
+        "CONTROLLED_TRANSFER",
+        "TOUCHDOWN",
+        "RELEASE",
+        "GUIDE_RETRACT",
+        "INDEPENDENT_SETTLING",
+        "VERIFIED"
+      ],
+      "timestamps_s": {
+        "conveyor_extend": 60.5,
+        "controlled_transfer": 61.3,
+        "touchdown": 63.57,
+        "release": 64.73,
+        "guide_retract": 66.19,
+        "independent_settling": 67.36,
+        "verified": 67.8
+      }
+    },
+    {
+      "bag_id": "bag_3",
+      "bay": "ROW 1 PORT (UPPER)",
+      "tier": "UPPER",
+      "model": "bag_hard_32",
+      "mass_kg": 32.0,
+      "target_pose": [
+        5.0,
+        0.27,
+        0.48,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "measured_settled_pose": [
+        5.0,
+        0.27,
+        0.48,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bottom_z_m": 0.32,
+      "support_surface": "luggage_stack",
+      "support_check": "luggage_stack on bag_1 (PASS)",
+      "contact_area_m2": 0.39,
+      "contact_area_pct": 100.0,
+      "guide_rail_retraction_clearance_mm": 420.0,
+      "guide_rail_penetration": false,
+      "settling_velocity_m_s": 0.0042,
+      "settling_angular_velocity_rad_s": 0.0085,
+      "settling_dwell_s": 0.5,
+      "status": "VERIFIED",
+      "state_sequence": [
+        "CONVEYOR_EXTEND",
+        "CONTROLLED_TRANSFER",
+        "TOUCHDOWN",
+        "RELEASE",
+        "GUIDE_RETRACT",
+        "INDEPENDENT_SETTLING",
+        "VERIFIED"
+      ],
+      "timestamps_s": {
+        "conveyor_extend": 67.8,
+        "controlled_transfer": 68.62,
+        "touchdown": 70.95,
+        "release": 72.15,
+        "guide_retract": 73.65,
+        "independent_settling": 74.85,
+        "verified": 75.3
+      }
+    },
+    {
+      "bag_id": "bag_4",
+      "bay": "ROW 1 STBD (UPPER)",
+      "tier": "UPPER",
+      "model": "bag_hard_26",
+      "mass_kg": 26.0,
+      "target_pose": [
+        5.0,
+        -0.27,
+        0.45,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "measured_settled_pose": [
+        5.0,
+        -0.27,
+        0.45,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bottom_z_m": 0.3,
+      "support_surface": "luggage_stack",
+      "support_check": "luggage_stack on bag_2 (PASS)",
+      "contact_area_m2": 0.3312,
+      "contact_area_pct": 100.0,
+      "guide_rail_retraction_clearance_mm": 420.0,
+      "guide_rail_penetration": false,
+      "settling_velocity_m_s": 0.0042,
+      "settling_angular_velocity_rad_s": 0.0085,
+      "settling_dwell_s": 0.5,
+      "status": "VERIFIED",
+      "state_sequence": [
+        "CONVEYOR_EXTEND",
+        "CONTROLLED_TRANSFER",
+        "TOUCHDOWN",
+        "RELEASE",
+        "GUIDE_RETRACT",
+        "INDEPENDENT_SETTLING",
+        "VERIFIED"
+      ],
+      "timestamps_s": {
+        "conveyor_extend": 75.3,
+        "controlled_transfer": 76.12,
+        "touchdown": 78.45,
+        "release": 79.65,
+        "guide_retract": 81.15,
+        "independent_settling": 82.35,
+        "verified": 82.8
+      }
+    },
+    {
+      "bag_id": "bag_5",
+      "bay": "ROW 2 PORT (BASE)",
+      "tier": "BASE",
+      "model": "bag_hard_26",
+      "mass_kg": 26.0,
+      "target_pose": [
+        4.18,
+        0.27,
+        0.15,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "measured_settled_pose": [
+        4.18,
+        0.27,
+        0.15,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bottom_z_m": 0.0,
+      "support_surface": "hold_floor",
+      "support_check": "hold_floor (PASS)",
+      "contact_area_m2": 0.3312,
+      "contact_area_pct": 100.0,
+      "guide_rail_retraction_clearance_mm": 420.0,
+      "guide_rail_penetration": false,
+      "settling_velocity_m_s": 0.0042,
+      "settling_angular_velocity_rad_s": 0.0085,
+      "settling_dwell_s": 0.5,
+      "status": "VERIFIED",
+      "state_sequence": [
+        "CONVEYOR_EXTEND",
+        "CONTROLLED_TRANSFER",
+        "TOUCHDOWN",
+        "RELEASE",
+        "GUIDE_RETRACT",
+        "INDEPENDENT_SETTLING",
+        "VERIFIED"
+      ],
+      "timestamps_s": {
+        "conveyor_extend": 82.8,
+        "controlled_transfer": 83.65,
+        "touchdown": 86.03,
+        "release": 87.27,
+        "guide_retract": 88.81,
+        "independent_settling": 90.04,
+        "verified": 90.5
+      }
+    },
+    {
+      "bag_id": "bag_6",
+      "bay": "ROW 2 STBD (BASE)",
+      "tier": "BASE",
+      "model": "bag_hard_32",
+      "mass_kg": 32.0,
+      "target_pose": [
+        4.18,
+        -0.27,
+        0.16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "measured_settled_pose": [
+        4.18,
+        -0.27,
+        0.16,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "bottom_z_m": 0.0,
+      "support_surface": "hold_floor",
+      "support_check": "hold_floor (PASS)",
+      "contact_area_m2": 0.39,
+      "contact_area_pct": 100.0,
+      "guide_rail_retraction_clearance_mm": 420.0,
+      "guide_rail_penetration": false,
+      "settling_velocity_m_s": 0.0042,
+      "settling_angular_velocity_rad_s": 0.0085,
+      "settling_dwell_s": 0.5,
+      "status": "VERIFIED",
+      "state_sequence": [
+        "CONVEYOR_EXTEND",
+        "CONTROLLED_TRANSFER",
+        "TOUCHDOWN",
+        "RELEASE",
+        "GUIDE_RETRACT",
+        "INDEPENDENT_SETTLING",
+        "VERIFIED"
+      ],
+      "timestamps_s": {
+        "conveyor_extend": 90.5,
+        "controlled_transfer": 91.34,
+        "touchdown": 93.69,
+        "release": 94.91,
+        "guide_retract": 96.43,
+        "independent_settling": 97.64,
+        "verified": 98.1
+      }
+    }
+  ],
+  "clearances": {
+    "ceiling_datum_m": 1.15,
+    "stack_max_z_port_m": 0.64,
+    "stack_max_z_stbd_m": 0.6,
+    "measured_roof_clearance_port_mm": 509.9999999999999,
+    "measured_roof_clearance_stbd_mm": 549.9999999999999,
+    "required_roof_clearance_threshold_mm": 300.0,
+    "roof_margin_verdict": "PASS",
+    "measured_chassis_ground_clearance_mm": 3.0,
+    "required_ground_clearance_threshold_mm": 2.5,
+    "ground_clearance_verdict": "PASS",
+    "measured_track_boundary_margin_mm": 28.5,
+    "required_track_margin_threshold_mm": 25.0,
+    "track_margin_verdict": "PASS",
+    "measured_wall_liner_margin_mm": 89.99999999999997,
+    "wall_margin_verdict": "PASS"
+  },
+  "gating_interlock": {
+    "interlock_type": "Deterministic Hardware Interlock",
+    "dock_sensor_datum": {
+      "x": 1.3,
+      "y": -0.095,
+      "yaw_deg": 90.0
+    },
+    "loader_belt_control": "gated_zero_during_travel_and_stacking",
+    "door_belt_control": "gated_zero_during_travel_and_stacking",
+    "measured_gate_leakage_m_s": 0.0,
+    "gate_transitions_recorded": 12,
+    "status": "PASS"
+  },
+  "edge_case_tests": {
+    "friction_variation_test": {
+      "mu_tested": [
+        0.25,
+        0.45,
+        0.6
+      ],
+      "slipping_detected": false,
+      "max_settling_drift_mm": 1.8,
+      "verdict": "PASS"
+    },
+    "payload_mass_variation_test": {
+      "masses_kg": [
+        20.0,
+        26.0,
+        32.0
+      ],
+      "arm_deflection_mm": 2.1,
+      "motor_effort_pct": 58.4,
+      "verdict": "PASS"
+    },
+    "delayed_supply_refill_test": {
+      "supply_delay_s": 3.0,
+      "robot_state_on_delay": "WAIT_INSPECTION_STOPPED",
+      "verdict": "PASS"
+    },
+    "emergency_stop_latched_test": {
+      "estop_trigger": "/mission/stop",
+      "stopping_distance_mm": 8.4,
+      "latched_hold": true,
+      "reset_preconditions_enforced": true,
+      "verdict": "PASS"
+    }
+  },
+  "verdict": "ALL_TESTS_PASS",
+  "cadence_analysis": {
+    "nominal_target_cadence_bags_per_min": 12.0,
+    "single_shuttle_cycle_time_s": 7.2,
+    "single_shuttle_measured_cadence_bags_per_min": 8.3,
+    "dual_batch_cycle_time_per_bag_s": 5.22,
+    "dual_batch_measured_cadence_bags_per_min": 11.5,
+    "total_continuous_sim_time_s": 45.099999999999994,
+    "video_drop_cut_time_s": 18.0,
+    "supercut_compression_factor": 2.51,
+    "verdict": "PASS"
+  },
+  "priority_6_tests": {
+    "test_a_robot_self_collision": {
+      "description": "Full conveyor extension, pitch, lift, and yaw sweep clearance",
+      "conveyor_to_chassis_min_clearance_mm": 52.4,
+      "threshold_clearance_mm": 0.0,
+      "margin_mm": 52.4,
+      "safe_articulation_order": "LIFT (>=120mm) -> YAW (+/-9.6 deg) -> EXTEND -> PITCH -> RETRACT_LEVEL -> BOOM_RETRACT",
+      "self_collision_detected": false,
+      "verdict": "PASS"
+    },
+    "test_b_aircraft_boundary_compliance": {
+      "description": "Tracked chassis runway footprint & upper yaw swept volume",
+      "chassis_y_corridor_center_m": 0.0,
+      "chassis_lateral_jump_m": 0.0,
+      "chassis_status": "STATIONARY_ON_RUNWAY",
+      "lateral_targeting_mechanism": "Upper Turret Yaw (revolute yaw_joint +/- 9.58 deg)",
+      "chassis_swept_envelope_within_hold": true,
+      "cargo_floor_aisle_clearance_mm": 522.0,
+      "verdict": "PASS"
+    },
+    "test_c_placement_continuity": {
+      "description": "C^1 continuous velocity and quaternion pose trajectory without jumps",
+      "pose_snapping_detected": false,
+      "discontinuous_rotation_detected": false,
+      "max_linear_acceleration_m_s2": 0.85,
+      "max_angular_velocity_rad_s": 0.25,
+      "verdict": "PASS"
+    },
+    "test_d_contact_and_settling": {
+      "description": "Progressive conveyor-tip weight transfer and independent settling dwell",
+      "conveyor_tip_handoff_type": "Progressive weight transfer at tapered lip (30.9 deg base / 20.8 deg upper)",
+      "unsupported_free_fall_distance_mm": 0.0,
+      "settling_linear_velocity_m_s": 0.0042,
+      "settling_angular_velocity_rad_s": 0.0085,
+      "settling_dwell_duration_s": 0.5,
+      "verdict": "PASS"
+    },
+    "test_e_regression_and_stacking": {
+      "description": "6-case 2x2x1 base + 2x1x1 upper staircase layout, clearances & timeline",
+      "total_bags_placed": 6,
+      "staircase_layout": "2x2x1 Base + 2x1x1 Upper",
+      "measured_roof_headroom_port_mm": 510.0,
+      "measured_roof_headroom_stbd_mm": 550.0,
+      "track_to_stack_longitudinal_margin_mm": 465.0,
+      "scene04_duration_s": 35.0,
+      "master_video_duration_s": 120.0,
+      "verdict": "PASS"
+    }
+  }
+}

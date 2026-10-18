@@ -1,0 +1,55 @@
+{
+  "scene": "Scene 07 \u2014 Results & Limitations Showcase",
+  "timestamp": "2026-10-18T09:05:00Z",
+  "categories": {
+    "1_chassis_bidirectional_mobility": {
+      "status": "PASS",
+      "max_fwd_vx": 0.55,
+      "min_rev_vx": -0.6,
+      "start_x": 2.0,
+      "peak_x": 3.2093,
+      "end_x": 2.1184
+    },
+    "2_mast_lift_elevation": {
+      "status": "PASS",
+      "max_lift_mm": 540.0,
+      "end_lift_mm": 0.0
+    },
+    "3_yaw_and_reach": {
+      "status": "PASS",
+      "yaw_stbd_deg": 30.0,
+      "yaw_port_deg": -30.0,
+      "max_reach_mm": 740.0
+    },
+    "4_pitch_and_belts": {
+      "status": "PASS",
+      "max_pitch_deg": 33.0,
+      "fwd_belt_mps": 0.35,
+      "rev_belt_mps": -0.35
+    },
+    "5_structural_clearance_pressure": {
+      "status": "PASS",
+      "min_roof_clearance_mm": 121.8,
+      "floor_pressure_kgm2": 333.6
+    },
+    "6_throughput_reality": {
+      "status": "PASS",
+      "shuttle_rate_bpm": 0.43,
+      "fleet_required_shuttles": "28-30",
+      "fixed_station_benchmark_bpm": 12.89
+    },
+    "7_boundary_disclosures": {
+      "status": "PASS",
+      "rigid_box_scoop_disclosed": true,
+      "personnel_safety_scope_disclosed": true
+    },
+    "8_video_deliverables": {
+      "status": "PASS",
+      "hud_mp4": "/home/fajrda/sutd-hackathon/videos/segment_07_measured_results.mp4",
+      "pure_mp4": "/home/fajrda/sutd-hackathon/videos/scene_07_pure.mp4",
+      "frames": 360,
+      "duration_s": 12.0
+    }
+  },
+  "verdict": "PASS"
+}

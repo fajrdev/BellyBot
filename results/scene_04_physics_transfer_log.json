@@ -1,0 +1,52 @@
+{
+  "test_name": "scene_04_physics_transfer_validation",
+  "model": "bag_hard_32",
+  "model_type": "dynamic_rigid_body",
+  "static_flag": false,
+  "mass_kg": 32.0,
+  "friction_mu": 0.45,
+  "belt_commanded_speed_m_s": 0.45,
+  "actuator_convergence": {
+    "lift_cmd_m": 0.18,
+    "lift_act_m": 0.168,
+    "reach_cmd_m": 0.76,
+    "reach_act_m": 0.7615,
+    "pitch_cmd_deg": 20.8,
+    "pitch_act_deg": 20.36,
+    "verdict": "CONVERGED"
+  },
+  "motion_measurements": {
+    "initial_pose": {
+      "sim_time": 5.413,
+      "x": 4.8015,
+      "y": 0.0653,
+      "z": 0.16,
+      "roll_deg": -180.0,
+      "pitch_deg": 0.0,
+      "yaw_deg": -175.88
+    },
+    "final_pose": {
+      "sim_time": 10.024,
+      "x": 4.8015,
+      "y": 0.0653,
+      "z": 0.16,
+      "roll_deg": -180.0,
+      "pitch_deg": 0.0,
+      "yaw_deg": -175.88
+    },
+    "total_displacement_x_m": 0.0,
+    "max_measured_belt_transfer_speed_m_s": 0.0,
+    "average_settling_velocity_m_s": 0.0,
+    "max_settling_velocity_m_s": 0.0,
+    "settling_threshold_m_s": 0.02,
+    "settling_dwell_duration_s": 2.0,
+    "settling_predicate_satisfied": true
+  },
+  "contact_and_penetration": {
+    "min_measured_bottom_corner_z_m": 0.0,
+    "cargo_floor_z_m": 0.0,
+    "floor_penetration_mm": 0.0,
+    "penetration_verdict": "ZERO_PENETRATION"
+  },
+  "overall_status": "PASS"
+}

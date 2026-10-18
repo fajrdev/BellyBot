@@ -4082,10 +4082,10 @@
         <axis>
           <xyz>0 1 0</xyz>
           <limit>
-            <velocity>0.6</velocity>
+            <velocity>0.8</velocity>
             <effort>450</effort>
             <lower>0</lower>
-            <upper>0.5585053606381855</upper>
+            <upper>0.62</upper>
           </limit>
           <dynamics>
             <damping>4</damping>
@@ -4184,50 +4184,82 @@
         <steering_efficiency>1</steering_efficiency>
         <topic>/model/bellybot_dock_stack/cmd_vel</topic>
         <linear_velocity>
-          <min_velocity>-0.2</min_velocity>
-          <max_velocity>0.2</max_velocity>
-          <min_acceleration>-0.3</min_acceleration>
-          <max_acceleration>0.3</max_acceleration>
+          <min_velocity>-0.8</min_velocity>
+          <max_velocity>0.8</max_velocity>
+          <min_acceleration>-1.6</min_acceleration>
+          <max_acceleration>1.6</max_acceleration>
         </linear_velocity>
         <angular_velocity>
-          <min_velocity>-0.25</min_velocity>
-          <max_velocity>0.25</max_velocity>
-          <min_acceleration>-0.4</min_acceleration>
-          <max_acceleration>0.4</max_acceleration>
+          <min_velocity>-1.0</min_velocity>
+          <max_velocity>1.0</max_velocity>
+          <min_acceleration>-2.5</min_acceleration>
+          <max_acceleration>2.5</max_acceleration>
         </angular_velocity>
         <frame_id>odom</frame_id>
         <child_frame_id>base_link</child_frame_id>
       </plugin>
       <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
         <joint_name>lift_stage_1_joint</joint_name>
+        <topic>/model/bellybot_dock_stack/lift_stage_target</topic>
+        <initial_position>0</initial_position>
+        <p_gain>100000</p_gain>
+        <i_gain>2000</i_gain>
+        <d_gain>1000</d_gain>
+        <cmd_max>3000</cmd_max>
+      </plugin>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
         <joint_name>lift_stage_2_joint</joint_name>
+        <topic>/model/bellybot_dock_stack/lift_stage_target</topic>
+        <initial_position>0</initial_position>
+        <p_gain>100000</p_gain>
+        <i_gain>2000</i_gain>
+        <d_gain>1000</d_gain>
+        <cmd_max>3000</cmd_max>
+      </plugin>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
         <joint_name>lift_stage_3_joint</joint_name>
         <topic>/model/bellybot_dock_stack/lift_stage_target</topic>
         <initial_position>0</initial_position>
-        <use_velocity_commands>true</use_velocity_commands>
-        <cmd_max>0.12</cmd_max>
+        <p_gain>100000</p_gain>
+        <i_gain>2000</i_gain>
+        <d_gain>1000</d_gain>
+        <cmd_max>3000</cmd_max>
       </plugin>
       <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
         <joint_name>extension_mid_joint</joint_name>
+        <topic>/model/bellybot_dock_stack/extension_stage_target</topic>
+        <initial_position>0</initial_position>
+        <p_gain>50000</p_gain>
+        <i_gain>1000</i_gain>
+        <d_gain>500</d_gain>
+        <cmd_max>1400</cmd_max>
+      </plugin>
+      <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
         <joint_name>extension_tip_joint</joint_name>
         <topic>/model/bellybot_dock_stack/extension_stage_target</topic>
         <initial_position>0</initial_position>
-        <use_velocity_commands>true</use_velocity_commands>
-        <cmd_max>0.7</cmd_max>
+        <p_gain>50000</p_gain>
+        <i_gain>1000</i_gain>
+        <d_gain>500</d_gain>
+        <cmd_max>1400</cmd_max>
       </plugin>
       <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
         <joint_name>yaw_joint</joint_name>
         <topic>/model/bellybot_dock_stack/yaw_target</topic>
         <initial_position>0</initial_position>
-        <use_velocity_commands>true</use_velocity_commands>
-        <cmd_max>1.0</cmd_max>
+        <p_gain>10000</p_gain>
+        <i_gain>500</i_gain>
+        <d_gain>200</d_gain>
+        <cmd_max>500</cmd_max>
       </plugin>
       <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
         <joint_name>tray_pitch_joint</joint_name>
         <topic>/model/bellybot_dock_stack/pitch_target</topic>
         <initial_position>0</initial_position>
-        <use_velocity_commands>true</use_velocity_commands>
-        <cmd_max>0.6</cmd_max>
+        <p_gain>15000</p_gain>
+        <i_gain>500</i_gain>
+        <d_gain>300</d_gain>
+        <cmd_max>450</cmd_max>
       </plugin>
       <plugin filename="gz-sim-track-controller-system" name="gz::sim::systems::TrackController">
         <link>tray_belt</link>

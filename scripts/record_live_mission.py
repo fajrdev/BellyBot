@@ -137,9 +137,9 @@ class MissionLiveRecorder(Node):
             "bag_x": self.bag_pose[0] if self.bag_pose else None,
             "bag_y": self.bag_pose[1] if self.bag_pose else None,
             "bag_z": self.bag_pose[2] if self.bag_pose else None,
-            "lift_mm": self.joint_states.get("lift_stage_1_joint", 0.0) * 3000.0,
-            "reach_mm": self.joint_states.get("extension_stage_1_joint", 0.0) * 2000.0,
-            "pitch_deg": math.degrees(self.joint_states.get("pitch_joint", 0.0)),
+            "lift_mm": sum(self.joint_states.get(f"lift_stage_{i}_joint", 0.0) for i in (1, 2, 3)) * 1000.0,
+            "reach_mm": (self.joint_states.get("extension_mid_joint", 0.0) + self.joint_states.get("extension_tip_joint", 0.0)) * 1000.0,
+            "pitch_deg": math.degrees(self.joint_states.get("tray_pitch_joint", 0.0)),
         })
 
     def close(self):
@@ -150,17 +150,15 @@ class MissionLiveRecorder(Node):
         telem_file.write_text(json.dumps(self.telemetry_log, indent=2))
         print(f"-> Saved telemetry log with {len(self.telemetry_log)} records to {telem_file}", flush=True)
 
-def spawn_bag(world_name, bag_model="bag_hard_32", bag_id="test_bag_32kg", y_spawn=-1.60, env=None):
+def spawn_bag(world_name, bag_model="bag_hard_32", bag_id="test_bag_32kg", pose_str="1.300 -0.095 0.658 0 0 1.570796327", env=None):
     model_sdf = PKG / "models" / bag_model / "model.sdf"
     tree = ET.parse(model_sdf)
     root = tree.getroot()
     m = root.find("model")
     m.set("name", bag_id)
 
-    size = [float(x) for x in m.findtext(".//collision/geometry/box/size").split()]
-    z_spawn = 0.398 + size[2] / 2.0 + 0.005
     pose_elem = ET.SubElement(m, "pose")
-    pose_elem.text = f"1.300 {y_spawn} {z_spawn:.3f} 0 -0.0956 1.570796327"
+    pose_elem.text = pose_str
 
     pl = ET.SubElement(m, "plugin", filename="gz-sim-pose-publisher-system", name="gz::sim::systems::PosePublisher")
     for k, v in [
@@ -184,7 +182,7 @@ def spawn_bag(world_name, bag_model="bag_hard_32", bag_id="test_bag_32kg", y_spa
         '--reqtype', 'gz.msgs.EntityFactory', '--reptype', 'gz.msgs.Boolean',
         '--timeout', '4000', '--req', req
     ]
-    print(f"-> Spawning {bag_id} at Y={y_spawn}, Z={z_spawn:.3f}m...", flush=True)
+    print(f"-> Spawning {bag_id} at pose: {pose_str}...", flush=True)
     subprocess.run(cmd, check=True, env=env)
 
 def main():
@@ -238,18 +236,19 @@ def main():
 
         print(f"-> Initial controller state: {node.status.get('state')}", flush=True)
 
-        # Spawn test bag on inclined door_belt
-        spawn_bag(world, bag_model="bag_hard_32", bag_id="test_bag_32kg", y_spawn=-1.60, env=env)
+        # Spawn test bag centered directly on robot tray conveyor
+        spawn_bag(world, bag_model="bag_hard_32", bag_id="test_bag_32kg",
+                  pose_str="1.300 -0.095 0.658 0 0 1.570796327", env=env)
         time.sleep(1.0)
 
         # Start recording
         node.recording = True
         print("-> RECORDING STARTED ON ALL 4 CAMERAS!", flush=True)
 
-        # Send start_load command
-        print("-> Publishing /mission/command: start_load...", flush=True)
+        # Send start_load command with skip_infeed=True for swift continuous loading
+        print("-> Publishing /mission/command: start_load (skip_infeed=True)...", flush=True)
         cmd_msg = String()
-        cmd_msg.data = json.dumps({'command': 'start_load', 'bag_id': 'test_bag_32kg'})
+        cmd_msg.data = json.dumps({'command': 'start_load', 'bag_id': 'test_bag_32kg', 'skip_infeed': True})
         node.pub_cmd.publish(cmd_msg)
 
         # Monitor full cycle
