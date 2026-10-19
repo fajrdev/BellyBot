@@ -33,6 +33,8 @@ results/*.tmp
 *.zip
 archives/*.zip
 videos/
+*.mp4
+*.MP4
 .commandcode/
 _bloat_stash/
 
