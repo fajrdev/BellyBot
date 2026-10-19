@@ -5,6 +5,7 @@
 [![ROS 2](https://img.shields.io/badge/ROS%202-Jazzy%20Jalisco-blue?logo=ros)](https://docs.ros.org/en/jazzy/)
 [![Gazebo](https://img.shields.io/badge/Gazebo-Harmonic%20(LTS)-orange?logo=gazebo)](https://gazebosim.org/)
 [![Python](https://img.shields.io/badge/Python-3.12-yellow?logo=python)](https://www.python.org/)
+[![YouTube Demo](https://img.shields.io/badge/YouTube-Watch%20Demo-red?logo=youtube)](https://youtu.be/rhNXy7fKyGk)
 [![Hackathon](https://img.shields.io/badge/SUTD%20ROAR%20Lab-Open%20Hackathon%202026-red)](https://www.roboroarz.com/)
 [![Validation](https://img.shields.io/badge/Verification%20Suite-100%25%20PASS-brightgreen)](#-empirical-verification--benchmark-matrix)
 [![Aircraft](https://img.shields.io/badge/Enclosure-Boeing%20737%20%2F%20Airbus%20A320-informational)](#-the-aviation-ergonomic-challenge)
@@ -12,7 +13,7 @@
 
 **An ultra-low-profile autonomous robotic shuttle engineered to automate baggage transfer, 2-tier lateral stacking, and ground recovery inside confined narrow-body aircraft cargo holds (< 1.2 m height).**
 
-[Overview](#-overview) • [Key Demonstrations](#-key-demonstrations) • [System Architecture](#-system-architecture) • [Quickstart & Teleop](#-quickstart--interactive-teleoperation) • [Verification Matrix](#-empirical-verification--benchmark-matrix) • [Team](#-team-information) • [License](#-license)
+[Overview](#-overview) • [Full Video Demo](#-official-video-demonstration) • [Key Highlights](#-key-demonstrations) • [System Architecture](#-system-architecture) • [Quickstart & Teleop](#-quickstart--interactive-teleoperation) • [Verification Matrix](#-empirical-verification--benchmark-matrix) • [Team](#-team-information) • [License](#-license)
 
 ---
 
@@ -37,7 +38,21 @@ Narrow-body (NB) aircraft (Boeing 737 and Airbus A320) account for over 70% of c
 
 ---
 
-## 🎬 Key Demonstrations
+## 🎬 Official Video Demonstration
+
+<div align="center">
+
+[![BellyBot Full Demonstration Video](https://img.youtube.com/vi/rhNXy7fKyGk/maxresdefault.jpg)](https://youtu.be/rhNXy7fKyGk)
+
+**[▶️ Click to Watch Full Official Video Demonstration on YouTube (https://youtu.be/rhNXy7fKyGk)](https://youtu.be/rhNXy7fKyGk)**
+
+*Watch BellyBot execute full Boeing 737-800 hold ingress, door-docked resupply, 2-tier lateral stacking, ground-level luggage scooping, and real-time sub-4 ms emergency stop safety verification.*
+
+</div>
+
+---
+
+## 🔬 Simulation Breakdown & Motion Sequences
 
 | 2-Tier Lateral Stacking (Scene 04) | Active Ground Scooping (Scene 05) |
 | :---: | :---: |
